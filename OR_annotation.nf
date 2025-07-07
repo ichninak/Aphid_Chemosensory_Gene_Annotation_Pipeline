@@ -10,9 +10,9 @@ workflow orWorkflow {
         .map{ idx, pair ->
             def species = pair[0]
             def genome = pair[1]
-            def id4 = String.format('%04d', idx+1)
-            def gagaID = "GAGA-${id4}"
-            tuple(id4, gagaID, species, genome)
+            def id2 = String.format('%02d', idx+1)
+            def gagaID = "GAGA-00${id2}"
+            tuple(id2, gagaID, species, genome)
         }
         .set { samples }
 
@@ -23,7 +23,7 @@ process processORAnnotation {
     tag { gagaID }
     cpus params.threads
     input: 
-        tuple val(id4), val(species), path(genome)
+        tuple val(id2), val(species), path(genome)
     output: 
         path "${params.out_base}/${gagaID}"
     script:
@@ -53,13 +53,13 @@ process processORAnnotation {
 
     echo '----------------------run BLAST with ORs database----------------------'
 
-    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/ORco_sequences.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORcoblast.txt -num_threads 40
+    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/ORco_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORcoblast.txt -num_threads 40
     blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/OR_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORblast.txt -num_threads 40 -max_target_seqs 5
-    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/GR_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.GRblast.txt -num_threads 40 -max_target_seqs 5
+    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/All1_GR.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.GRblast.txt -num_threads 40 -max_target_seqs 5
 
     # classification 
     
-    perl /home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/run_OR_classification.pl ABCENTH_clean.gff3 ${gagaID} ${genome}
+    perl ${params.script_dir}/run_OR_classification.pl ABCENTH_clean.gff3 ${gagaID} ${genome}
 
     """
 }
