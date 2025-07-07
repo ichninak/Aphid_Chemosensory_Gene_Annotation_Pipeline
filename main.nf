@@ -1,7 +1,9 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl = 2
 
-include { grWorkflow } from './gr_annotation.nf'
+include { grWorkflow } from './GR1.nf'
+include { grWorkflow } from './GR2.nf'
+include { grWorkflow } from './GR3.nf'
 include { orWorkflow } from './or_annotation.nf'
 
 workflow {
