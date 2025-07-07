@@ -17,13 +17,13 @@ workflow grWorkflow {
             def PREM = "GAGA-00${id2}"
             def PREM2 = "GAGA-10${id2}"
             def PREM3 = "GAGA-20${id2}"
-            tuple(id4, gagaID, species, genome)
+            tuple(id4, gagaID1, gagaID2, gagaID3, species, genome, PREM, PREM2, PREM3)
         }
         .set { samples }
 
     samples
-        | processHappyGR
         | processAbcenthGR
+        | processHappyGR
         | processCombineGR
 }
 
@@ -80,7 +80,7 @@ process processHappyGR {
     tag { gagaID2 }
     cpus params.threads
     input:
-        tuple val(id4), val(gagaID), val(species), path(genome), val(PREM)
+        tuple val(id4), val(gagaID2), val(species), path(genome), val(PREM)
     output:
         path "${params.out_base}/${gagaID2}"
     script:
@@ -142,7 +142,7 @@ process processCombineGR {
     tag { gagaID3 }
     cpus 4
     input:
-        tuple val(id4), val(gagaID), val(species), path(genome), val(PREM), val(PREM2), val(PREM3)
+        tuple val(id4), val(gagaID3), val(species), path(genome), val(PREM), val(PREM2), val(PREM3)
     output:
         path "${params.out_base}/${gagaID3}"
     script:

@@ -23,7 +23,7 @@ process processORAnnotation {
     tag { gagaID }
     cpus params.threads
     input: 
-        tuple val(id2), val(species), path(genome)
+        tuple val(id2), val(gagaID), val(species), path(genome)
     output: 
         path "${params.out_base}/${gagaID}"
     script:

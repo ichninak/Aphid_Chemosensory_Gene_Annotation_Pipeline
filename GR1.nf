@@ -11,15 +11,14 @@ workflow grWorkflow {
             def species = pair[0]
             def genome = pair[1]
             def id2 = String.format('%02d', idx+1)
-            def gagaID = "GAGA-10${id2}"
-            tuple(id4, gagaID, species, genome)
+            def gagaID1 = "GAGA-10${id2}"
+            def PREM = "GAGA-00${id2}"
+            tuple(id4, gagaID1, species, genome, PREM)
         }
         .set { samples }
 
     samples
-        | processHappyGR
         | processAbcenthGR
-        | processCombineGR
 }
 
 process processAbcenthGR {
