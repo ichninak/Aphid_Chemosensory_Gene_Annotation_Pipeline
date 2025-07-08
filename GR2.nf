@@ -1,6 +1,6 @@
 nextflow.enable.dsl = 2
 
-workflow grWorkflow {
+workflow gr2Workflow {
     Channel
         .fromPath("${params.genome_dir}/*.fa")
         .map { it.getName() }
@@ -13,7 +13,7 @@ workflow grWorkflow {
             def id2 = String.format('%02d', idx+1)
             def gagaID2 = "GAGA-20${id2}"
             def PREM = "GAGA-00${id2}"
-            tuple(id4, gagaID2, species, genome, PREM)
+            tuple(id2, gagaID2, species, genome, PREM)
         }
         .set { samples }
 
@@ -25,7 +25,7 @@ process processHappyGR {
     tag { gagaID2 }
     cpus params.threads
     input:
-        tuple val(id4), val(gagaID2), val(species), path(genome), val(PREM)
+        tuple val(id2), val(gagaID2), val(species), path(genome), val(PREM)
     output:
         path "${params.out_base}/${gagaID2}"
     script:

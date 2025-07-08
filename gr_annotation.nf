@@ -17,7 +17,7 @@ workflow grWorkflow {
             def PREM = "GAGA-00${id2}"
             def PREM2 = "GAGA-10${id2}"
             def PREM3 = "GAGA-20${id2}"
-            tuple(id4, gagaID1, gagaID2, gagaID3, species, genome, PREM, PREM2, PREM3)
+            tuple(id2, gagaID1, gagaID2, gagaID3, species, genome, PREM, PREM2, PREM3)
         }
         .set { samples }
 
@@ -33,14 +33,14 @@ process processAbcenthGR {
    tag { gagaID1 }
     cpus params.threads
     input:
-        tuple val(id4), val(gagaID1), val(species), path(genome), val(PREM)
+        tuple val(id2), val(gagaID1), val(species), path(genome), val(PREM)
     output:
         path "${params.out_base}/${gagaID1}"
     script:
     """
     # HAPpy Abcenth GR
 
-    HAPpy --threads $cpus --annotator ABCENTH --hmm_dir ${db2GR} --genome ${genome} --output_dir ${params.out_base}/${gagaID1}
+    HAPpy --threads $cpus --annotator ABCENTH --hmm_dir ${params.db2GR} --genome ${genome} --output_dir ${params.out_base}/${gagaID1}
 
     cd ${params.out_base}/${gagaID1}
 
@@ -76,11 +76,12 @@ process processAbcenthGR {
     """
 }
 
+
 process processHappyGR {
     tag { gagaID2 }
     cpus params.threads
     input:
-        tuple val(id4), val(gagaID2), val(species), path(genome), val(PREM)
+        tuple val(id2), val(gagaID2), val(species), path(genome), val(PREM)
     output:
         path "${params.out_base}/${gagaID2}"
     script:
@@ -142,7 +143,7 @@ process processCombineGR {
     tag { gagaID3 }
     cpus 4
     input:
-        tuple val(id4), val(gagaID3), val(species), path(genome), val(PREM), val(PREM2), val(PREM3)
+        tuple val(id2), val(gagaID3), val(species), path(genome), val(PREM), val(PREM2), val(PREM3)
     output:
         path "${params.out_base}/${gagaID3}"
     script:
