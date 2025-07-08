@@ -8,13 +8,14 @@ include { orWorkflow } from './or_annotation.nf'
 
 workflow {
     // run only the steps the user requested
-    if( params.GR1 )   happyGR()
-    if( params.GR2 )   abcenthGR()
-    if( params.GR3 )   combineGR()
+    if( params.GR1 )   gr1Workflow()
+    if( params.GR2 )   gr2Workflow()
+    if( params.GR3 )   gr3Workflow()
     if( params.OR  )   orWorkflow()
 
     // if none of option set, send a message to explain how it work
     if ( !params.GR1 && !params.GR2 && !params.GR3 && !params.OR ) {
-        echo 'usage: XXX'
+        log.error 'usage: nextflow run main.nf --option true or false [option: GR1, GR2, GR3 or OR]'
+        exit 1
     }
 }

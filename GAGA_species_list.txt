@@ -1,177 +1,177 @@
 GAGA ID	Species	Subfamily	Shortname	Final species name
-GAGA-0001	Acyrthosiphon pisum	Aphidinae	Apis	Acyrthosiphon pisum
-GAGA-0002	Adelges cooleyi	Adelginae	Acoo	Adelges cooleyi
-GAGA-0003	Aphis craccivora	Aphidinae	Acra	Aphis craccivora
-GAGA-0004	Aphis fabae	Aphidinae	Afab	Aphis fabae
-GAGA-0005	Aphis glycines	Aphidinae	Agly	Aphis glycines
-GAGA-0006	Aphis gossypii	Aphidinae	Agos	Aphis gossypii
-GAGA-0007	Aphis rumicis	Aphidinae	Arum	Aphis rumicis
-GAGA-0008	Aphis thalictri	Aphidinae	Atha	Aphis thalictri
-GAGA-0009	Brachycaudus cardui	Aphidinae	Bcar	Brachycaudus cardui
-GAGA-0010	Brachycaudus helichrysi	Aphidinae	Bhel	Brachycaudus helichrysi
-GAGA-0011	Brachycaudus klugkisti	Aphidinae	Bklu	Brachycaudus klugkisti
-GAGA-0012	Brevicoryne brassicae	Aphidinae	Bbra	Brevicoryne brassicae
-GAGA-0013	Chaitophorus viminalis	Chaitophorinae	Cvim	Chaitophorus viminalis
-GAGA-0014	Cinara cedri	Lachninae	Cced	Cinara cedri
-GAGA-0015	Daktulosphaira vitifoliae	Phylloxerinae	Dvit	Daktulosphaira vitifoliae
-GAGA-0016	Diuraphis noxia	Aphidinae	Dnox	Diuraphis noxia
-GAGA-0017	Drepanosiphum platanoidis	Drepanosiphinae	Dpla	Drepanosiphum platanoidis
-GAGA-0018	Dysaphis plantaginea	Aphidinae	Dypla	Dysaphis plantaginea
-GAGA-0019	Eriosoma lanigerum	Eriosomatinae	Elan	Eriosoma lanigerum
-GAGA-0020	Hormaphis cornu	Hormaphidinae	Hcor	Hormaphis cornu
-GAGA-0021	Macrosiphum albifrons	Aphidinae	Malb	Macrosiphum albifrons
-GAGA-0022	Macrosiphum euphorbiae	Aphidinae	Meup	Macrosiphum euphorbiae
-GAGA-0023	Melanaphis sacchari	Aphidinae	Msac	Melanaphis sacchari
-GAGA-0024	Metopolophium dirhodum	Aphidinae	Mdir	Metopolophium dirhodum
-GAGA-0025	Myzus cerasi	Aphidinae	Mcer	Myzus cerasi
-GAGA-0026	Myzus ligustri	Aphidinae	Mlig	Myzus ligustri
-GAGA-0027	Myzus lythri	Aphidinae	Mlyt	Myzus lythri
-GAGA-0028	Myzus persicae	Aphidinae	Mper	Myzus persicae
-GAGA-0029	Myzus varians	Aphidinae	Mvar	Myzus varians
-GAGA-0030	Nasonovia ribisnigri	Aphidinae	Nrib	Nasonovia ribisnigri
-GAGA-0031	Neotoxoptera formosana	Aphidinae	Nfor	Neotoxoptera formosana
-GAGA-0032	Pemphigus obesinymphae	Pemphiginae	Pobe	Pemphigus obesinymphae
-GAGA-0033	Pentalonia nigronervosa	Aphidinae	Pnig	Pentalonia nigronervosa
-GAGA-0034	Periphyllus acericola	Chaitophorinae	Pace	Periphyllus acericola
-GAGA-0035	Phorodon humuli	Aphidinae	Phum	Phorodon humuli
-GAGA-0036	Rhopalosiphum maidis	Aphidinae	Rmai	Rhopalosiphum maidis
-GAGA-0037	Rhopalosiphum nymphaeae	Aphidinae	Rnym	Rhopalosiphum nymphaeae
-GAGA-0038	Rhopalosiphum padi	Aphidinae	Rpad	Rhopalosiphum padi
-GAGA-0039	Schlechtendalia chinensis	Pemphiginae	Schi	Schlechtendalia chinensis
-GAGA-0040	Sipha flava	Chaitophorinae	Sfla	Sipha flava
-GAGA-0041	Sitobion miscanthi	Aphidinae	Smis	Sitobion miscanthi
-GAGA-0042	Tetraneura akinire	Eriosomatinae	Taki	Tetraneura akinire
-GAGA-0043	Therioaphis trifolii	Aphidinae	Ttri	Therioaphis trifolii
-GAGA-0044	Tuberolachnus salignus	Lachninae	Tsal	Tuberolachnus salignus
-GAGA-1001       Acyrthosiphon pisum     Aphidinae       Apis    Acyrthosiphon pisum
-GAGA-1002       Adelges cooleyi Adelginae       Acoo    Adelges cooleyi
-GAGA-1003       Aphis craccivora        Aphidinae       Acra    Aphis craccivora
-GAGA-1004       Aphis fabae     Aphidinae       Afab    Aphis fabae
-GAGA-1005       Aphis glycines  Aphidinae       Agly    Aphis glycines
-GAGA-1006       Aphis gossypii  Aphidinae       Agos    Aphis gossypii
-GAGA-1007       Aphis rumicis   Aphidinae       Arum    Aphis rumicis
-GAGA-1008       Aphis thalictri Aphidinae       Atha    Aphis thalictri
-GAGA-1009       Brachycaudus cardui     Aphidinae       Bcar    Brachycaudus cardui
-GAGA-1010       Brachycaudus helichrysi Aphidinae       Bhel    Brachycaudus helichrysi
-GAGA-1011       Brachycaudus klugkisti  Aphidinae       Bklu    Brachycaudus klugkisti
-GAGA-1012       Brevicoryne brassicae   Aphidinae       Bbra    Brevicoryne brassicae
-GAGA-1013       Chaitophorus viminalis  Chaitophorinae  Cvim    Chaitophorus viminalis
-GAGA-1014       Cinara cedri    Lachninae       Cced    Cinara cedri
-GAGA-1015       Daktulosphaira vitifoliae       Phylloxerinae   Dvit    Daktulosphaira vitifoliae
-GAGA-1016       Diuraphis noxia Aphidinae       Dnox    Diuraphis noxia
-GAGA-1017       Drepanosiphum platanoidis       Drepanosiphinae Dpla    Drepanosiphum platanoidis
-GAGA-1018       Dysaphis plantaginea    Aphidinae       Dpla    Dysaphis plantaginea
-GAGA-1019       Eriosoma lanigerum      Eriosomatinae   Elan    Eriosoma lanigerum
-GAGA-1020       Hormaphis cornu Hormaphidinae   Hcor    Hormaphis cornu
-GAGA-1021       Macrosiphum albifrons   Aphidinae       Malb    Macrosiphum albifrons
-GAGA-1022       Macrosiphum euphorbiae  Aphidinae       Meup    Macrosiphum euphorbiae
-GAGA-1023       Melanaphis sacchari     Aphidinae       Msac    Melanaphis sacchari
-GAGA-1024       Metopolophium dirhodum  Aphidinae       Mdir    Metopolophium dirhodum
-GAGA-1025       Myzus cerasi    Aphidinae       Mcer    Myzus cerasi
-GAGA-1026       Myzus ligustri  Aphidinae       Mlig    Myzus ligustri
-GAGA-1027       Myzus lythri    Aphidinae       Mlyt    Myzus lythri
-GAGA-1028       Myzus persicae  Aphidinae       Mper    Myzus persicae
-GAGA-1029       Myzus varians   Aphidinae       Mvar    Myzus varians
-GAGA-1030       Nasonovia ribisnigri    Aphidinae       Nrib    Nasonovia ribisnigri
-GAGA-1031       Neotoxoptera formosana  Aphidinae       Nfor    Neotoxoptera formosana
-GAGA-1032       Pemphigus obesinymphae  Pemphiginae     Pobe    Pemphigus obesinymphae
-GAGA-1033       Pentalonia nigronervosa Aphidinae       Pnig    Pentalonia nigronervosa
-GAGA-1034       Periphyllus acericola   Chaitophorinae  Pace    Periphyllus acericola
-GAGA-1035       Phorodon humuli Aphidinae       Phum    Phorodon humuli
-GAGA-1036       Rhopalosiphum maidis    Aphidinae       Rmai    Rhopalosiphum maidis
-GAGA-1037       Rhopalosiphum nymphaeae Aphidinae       Rnym    Rhopalosiphum nymphaeae
-GAGA-1038       Rhopalosiphum padi      Aphidinae       Rpad    Rhopalosiphum padi
-GAGA-1039       Schlechtendalia chinensis       Pemphiginae     Schi    Schlechtendalia chinensis
-GAGA-1040       Sipha flava     Chaitophorinae  Sfla    Sipha flava
-GAGA-1041       Sitobion miscanthi      Aphidinae       Smis    Sitobion miscanthi
-GAGA-1042       Tetraneura akinire      Eriosomatinae   Taki    Tetraneura akinire
-GAGA-1043       Therioaphis trifolii    Aphidinae       Ttri    Therioaphis trifolii
-GAGA-1044       Tuberolachnus salignus  Lachninae       Tsal    Tuberolachnus salignus
-GAGA-2001       Acyrthosiphon pisum     Aphidinae       Apis    Acyrthosiphon pisum
-GAGA-2002       Adelges cooleyi Adelginae       Acoo    Adelges cooleyi
-GAGA-2003       Aphis craccivora        Aphidinae       Acra    Aphis craccivora
-GAGA-2004       Aphis fabae     Aphidinae       Afab    Aphis fabae
-GAGA-2005       Aphis glycines  Aphidinae       Agly    Aphis glycines
-GAGA-2006       Aphis gossypii  Aphidinae       Agos    Aphis gossypii
-GAGA-2007       Aphis rumicis   Aphidinae       Arum    Aphis rumicis
-GAGA-2008       Aphis thalictri Aphidinae       Atha    Aphis thalictri
-GAGA-2009       Brachycaudus cardui     Aphidinae       Bcar    Brachycaudus cardui
-GAGA-2010       Brachycaudus helichrysi Aphidinae       Bhel    Brachycaudus helichrysi
-GAGA-2011       Brachycaudus klugkisti  Aphidinae       Bklu    Brachycaudus klugkisti
-GAGA-2012       Brevicoryne brassicae   Aphidinae       Bbra    Brevicoryne brassicae
-GAGA-2013       Chaitophorus viminalis  Chaitophorinae  Cvim    Chaitophorus viminalis
-GAGA-2014       Cinara cedri    Lachninae       Cced    Cinara cedri
-GAGA-2015       Daktulosphaira vitifoliae       Phylloxerinae   Dvit    Daktulosphaira vitifoliae
-GAGA-2016       Diuraphis noxia Aphidinae       Dnox    Diuraphis noxia
-GAGA-2017       Drepanosiphum platanoidis       Drepanosiphinae Dpla    Drepanosiphum platanoidis
-GAGA-2018       Dysaphis plantaginea    Aphidinae       Dpla    Dysaphis plantaginea
-GAGA-2019       Eriosoma lanigerum      Eriosomatinae   Elan    Eriosoma lanigerum
-GAGA-2020       Hormaphis cornu Hormaphidinae   Hcor    Hormaphis cornu
-GAGA-2021       Macrosiphum albifrons   Aphidinae       Malb    Macrosiphum albifrons
-GAGA-2022       Macrosiphum euphorbiae  Aphidinae       Meup    Macrosiphum euphorbiae
-GAGA-2023       Melanaphis sacchari     Aphidinae       Msac    Melanaphis sacchari
-GAGA-2024       Metopolophium dirhodum  Aphidinae       Mdir    Metopolophium dirhodum
-GAGA-2025       Myzus cerasi    Aphidinae       Mcer    Myzus cerasi
-GAGA-2026       Myzus ligustri  Aphidinae       Mlig    Myzus ligustri
-GAGA-2027       Myzus lythri    Aphidinae       Mlyt    Myzus lythri
-GAGA-2028       Myzus persicae  Aphidinae       Mper    Myzus persicae
-GAGA-2029       Myzus varians   Aphidinae       Mvar    Myzus varians
-GAGA-2030       Nasonovia ribisnigri    Aphidinae       Nrib    Nasonovia ribisnigri
-GAGA-2031       Neotoxoptera formosana  Aphidinae       Nfor    Neotoxoptera formosana
-GAGA-2032       Pemphigus obesinymphae  Pemphiginae     Pobe    Pemphigus obesinymphae
-GAGA-2033       Pentalonia nigronervosa Aphidinae       Pnig    Pentalonia nigronervosa
-GAGA-2034       Periphyllus acericola   Chaitophorinae  Pace    Periphyllus acericola
-GAGA-2035       Phorodon humuli Aphidinae       Phum    Phorodon humuli
-GAGA-2036       Rhopalosiphum maidis    Aphidinae       Rmai    Rhopalosiphum maidis
-GAGA-2037       Rhopalosiphum nymphaeae Aphidinae       Rnym    Rhopalosiphum nymphaeae
-GAGA-2038       Rhopalosiphum padi      Aphidinae       Rpad    Rhopalosiphum padi
-GAGA-2039       Schlechtendalia chinensis       Pemphiginae     Schi    Schlechtendalia chinensis
-GAGA-2040       Sipha flava     Chaitophorinae  Sfla    Sipha flava
-GAGA-2041       Sitobion miscanthi      Aphidinae       Smis    Sitobion miscanthi
-GAGA-2042       Tetraneura akinire      Eriosomatinae   Taki    Tetraneura akinire
-GAGA-2043       Therioaphis trifolii    Aphidinae       Ttri    Therioaphis trifolii
-GAGA-2044       Tuberolachnus salignus  Lachninae       Tsal    Tuberolachnus salignus
-GAGA-3001       Acyrthosiphon pisum     Aphidinae       Apis    Acyrthosiphon pisum
-GAGA-3002       Adelges cooleyi Adelginae       Acoo    Adelges cooleyi
-GAGA-3003       Aphis craccivora        Aphidinae       Acra    Aphis craccivora
-GAGA-3004       Aphis fabae     Aphidinae       Afab    Aphis fabae
-GAGA-3005       Aphis glycines  Aphidinae       Agly    Aphis glycines
-GAGA-3006       Aphis gossypii  Aphidinae       Agos    Aphis gossypii
-GAGA-3007       Aphis rumicis   Aphidinae       Arum    Aphis rumicis
-GAGA-3008       Aphis thalictri Aphidinae       Atha    Aphis thalictri
-GAGA-3009       Brachycaudus cardui     Aphidinae       Bcar    Brachycaudus cardui
-GAGA-3010       Brachycaudus helichrysi Aphidinae       Bhel    Brachycaudus helichrysi
-GAGA-3011       Brachycaudus klugkisti  Aphidinae       Bklu    Brachycaudus klugkisti
-GAGA-3012       Brevicoryne brassicae   Aphidinae       Bbra    Brevicoryne brassicae
-GAGA-3013       Chaitophorus viminalis  Chaitophorinae  Cvim    Chaitophorus viminalis
-GAGA-3014       Cinara cedri    Lachninae       Cced    Cinara cedri
-GAGA-3015       Daktulosphaira vitifoliae       Phylloxerinae   Dvit    Daktulosphaira vitifoliae
-GAGA-3016       Diuraphis noxia Aphidinae       Dnox    Diuraphis noxia
-GAGA-3017       Drepanosiphum platanoidis       Drepanosiphinae Dpla    Drepanosiphum platanoidis
-GAGA-3018       Dysaphis plantaginea    Aphidinae       Dpla    Dysaphis plantaginea
-GAGA-3019       Eriosoma lanigerum      Eriosomatinae   Elan    Eriosoma lanigerum
-GAGA-3020       Hormaphis cornu Hormaphidinae   Hcor    Hormaphis cornu
-GAGA-3021       Macrosiphum albifrons   Aphidinae       Malb    Macrosiphum albifrons
-GAGA-3022       Macrosiphum euphorbiae  Aphidinae       Meup    Macrosiphum euphorbiae
-GAGA-3023       Melanaphis sacchari     Aphidinae       Msac    Melanaphis sacchari
-GAGA-3024       Metopolophium dirhodum  Aphidinae       Mdir    Metopolophium dirhodum
-GAGA-3025       Myzus cerasi    Aphidinae       Mcer    Myzus cerasi
-GAGA-3026       Myzus ligustri  Aphidinae       Mlig    Myzus ligustri
-GAGA-3027       Myzus lythri    Aphidinae       Mlyt    Myzus lythri
-GAGA-3028       Myzus persicae  Aphidinae       Mper    Myzus persicae
-GAGA-3029       Myzus varians   Aphidinae       Mvar    Myzus varians
-GAGA-3030       Nasonovia ribisnigri    Aphidinae       Nrib    Nasonovia ribisnigri
-GAGA-3031       Neotoxoptera formosana  Aphidinae       Nfor    Neotoxoptera formosana
-GAGA-3032       Pemphigus obesinymphae  Pemphiginae     Pobe    Pemphigus obesinymphae
-GAGA-3033       Pentalonia nigronervosa Aphidinae       Pnig    Pentalonia nigronervosa
-GAGA-3034       Periphyllus acericola   Chaitophorinae  Pace    Periphyllus acericola
-GAGA-3035       Phorodon humuli Aphidinae       Phum    Phorodon humuli
-GAGA-3036       Rhopalosiphum maidis    Aphidinae       Rmai    Rhopalosiphum maidis
-GAGA-3037       Rhopalosiphum nymphaeae Aphidinae       Rnym    Rhopalosiphum nymphaeae
-GAGA-3038       Rhopalosiphum padi      Aphidinae       Rpad    Rhopalosiphum padi
-GAGA-3039       Schlechtendalia chinensis       Pemphiginae     Schi    Schlechtendalia chinensis
-GAGA-3040       Sipha flava     Chaitophorinae  Sfla    Sipha flava
-GAGA-3041       Sitobion miscanthi      Aphidinae       Smis    Sitobion miscanthi
-GAGA-3042       Tetraneura akinire      Eriosomatinae   Taki    Tetraneura akinire
-GAGA-3043       Therioaphis trifolii    Aphidinae       Ttri    Therioaphis trifolii
-GAGA-3044       Tuberolachnus salignus  Lachninae       Tsal    Tuberolachnus salignus
+GAGA-0001	Acyrthosiphon_pisum	Aphidinae	Apis	Acyrthosiphon_pisum
+GAGA-0002	Adelges_cooleyi	Adelginae	Acoo	Adelges_cooleyi
+GAGA-0003	Aphis_craccivora	Aphidinae	Acra	Aphis_craccivora
+GAGA-0004	Aphis_fabae	Aphidinae	Afab	Aphis_fabae
+GAGA-0005	Aphis_glycines	Aphidinae	Agly	Aphis_glycines
+GAGA-0006	Aphis_gossypii	Aphidinae	Agos	Aphis_gossypii
+GAGA-0007	Aphis_rumicis	Aphidinae	Arum	Aphis_rumicis
+GAGA-0008	Aphis_thalictri	Aphidinae	Atha	Aphis_thalictri
+GAGA-0009	Brachycaudus_cardui	Aphidinae	Bcar	Brachycaudus_cardui
+GAGA-0010	Brachycaudus_helichrysi	Aphidinae	Bhel	Brachycaudus_helichrysi
+GAGA-0011	Brachycaudus_klugkisti	Aphidinae	Bklu	Brachycaudus_klugkisti
+GAGA-0012	Brevicoryne_brassicae	Aphidinae	Bbra	Brevicoryne_brassicae
+GAGA-0013	Chaitophorus_viminalis	Chaitophorinae	Cvim	Chaitophorus_viminalis
+GAGA-0014	Cinara_cedri	Lachninae	Cced	Cinara_cedri
+GAGA-0015	Daktulosphaira_vitifoliae	Phylloxerinae	Dvit	Daktulosphaira_vitifoliae
+GAGA-0016	Diuraphis_noxia	Aphidinae	Dnox	Diuraphis_noxia
+GAGA-0017	Drepanosiphum_platanoidis	Drepanosiphinae	Dpla	Drepanosiphum_platanoidis
+GAGA-0018	Dysaphis_plantaginea	Aphidinae	Dypla	Dysaphis_plantaginea
+GAGA-0019	Eriosoma_lanigerum	Eriosomatinae	Elan	Eriosoma_lanigerum
+GAGA-0020	Hormaphis_cornu	Hormaphidinae	Hcor	Hormaphis_cornu
+GAGA-0021	Macrosiphum_albifrons	Aphidinae	Malb	Macrosiphum_albifrons
+GAGA-0022	Macrosiphum_euphorbiae	Aphidinae	Meup	Macrosiphum_euphorbiae
+GAGA-0023	Melanaphis_sacchari	Aphidinae	Msac	Melanaphis_sacchari
+GAGA-0024	Metopolophium_dirhodum	Aphidinae	Mdir	Metopolophium_dirhodum
+GAGA-0025	Myzus_cerasi	Aphidinae	Mcer	Myzus_cerasi
+GAGA-0026	Myzus_ligustri	Aphidinae	Mlig	Myzus_ligustri
+GAGA-0027	Myzus_lythri	Aphidinae	Mlyt	Myzus_lythri
+GAGA-0028	Myzus_persicae	Aphidinae	Mper	Myzus_persicae
+GAGA-0029	Myzus_varians	Aphidinae	Mvar	Myzus_varians
+GAGA-0030	Nasonovia_ribisnigri	Aphidinae	Nrib	Nasonovia_ribisnigri
+GAGA-0031	Neotoxoptera_formosana	Aphidinae	Nfor	Neotoxoptera_formosana
+GAGA-0032	Pemphigus_obesinymphae	Pemphiginae	Pobe	Pemphigus_obesinymphae
+GAGA-0033	Pentalonia_nigronervosa	Aphidinae	Pnig	Pentalonia_nigronervosa
+GAGA-0034	Periphyllus_acericola	Chaitophorinae	Pace	Periphyllus_acericola
+GAGA-0035	Phorodon_humuli	Aphidinae	Phum	Phorodon_humuli
+GAGA-0036	Rhopalosiphum_maidis	Aphidinae	Rmai	Rhopalosiphum_maidis
+GAGA-0037	Rhopalosiphum_nymphaeae	Aphidinae	Rnym	Rhopalosiphum_nymphaeae
+GAGA-0038	Rhopalosiphum_padi	Aphidinae	Rpad	Rhopalosiphum_padi
+GAGA-0039	Schlechtendalia_chinensis	Pemphiginae	Schi	Schlechtendalia_chinensis
+GAGA-0040	Sipha_flava	Chaitophorinae	Sfla	Sipha_flava
+GAGA-0041	Sitobion_miscanthi	Aphidinae	Smis	Sitobion_miscanthi
+GAGA-0042	Tetraneura_akinire	Eriosomatinae	Taki	Tetraneura_akinire
+GAGA-0043	Therioaphis_trifolii	Aphidinae	Ttri	Therioaphis_trifolii
+GAGA-0044	Tuberolachnus_salignus	Lachninae	Tsal	Tuberolachnus_salignus
+GAGA-1001	Acyrthosiphon_pisum	Aphidinae	Apis	Acyrthosiphon_pisum
+GAGA-1002	Adelges_cooleyi	Adelginae	Acoo	Adelges_cooleyi
+GAGA-1003	Aphis_craccivora	Aphidinae	Acra	Aphis_craccivora
+GAGA-1004	Aphis_fabae	Aphidinae	Afab	Aphis_fabae
+GAGA-1005	Aphis_glycines	Aphidinae	Agly	Aphis_glycines
+GAGA-1006	Aphis_gossypii	Aphidinae	Agos	Aphis_gossypii
+GAGA-1007	Aphis_rumicis	Aphidinae	Arum	Aphis_rumicis
+GAGA-1008	Aphis_thalictri	Aphidinae	Atha	Aphis_thalictri
+GAGA-1009	Brachycaudus_cardui	Aphidinae	Bcar	Brachycaudus_cardui
+GAGA-1010	Brachycaudus_helichrysi	Aphidinae	Bhel	Brachycaudus_helichrysi
+GAGA-1011	Brachycaudus_klugkisti	Aphidinae	Bklu	Brachycaudus_klugkisti
+GAGA-1012	Brevicoryne_brassicae	Aphidinae	Bbra	Brevicoryne_brassicae
+GAGA-1013	Chaitophorus_viminalis	Chaitophorinae	Cvim	Chaitophorus_viminalis
+GAGA-1014	Cinara_cedri	Lachninae	Cced	Cinara_cedri
+GAGA-1015	Daktulosphaira_vitifoliae	Phylloxerinae	Dvit	Daktulosphaira_vitifoliae
+GAGA-1016	Diuraphis_noxia	Aphidinae	Dnox	Diuraphis_noxia
+GAGA-1017	Drepanosiphum_platanoidis	Drepanosiphinae	Dpla	Drepanosiphum_platanoidis
+GAGA-1018	Dysaphis_plantaginea	Aphidinae	Dypla	Dysaphis_plantaginea
+GAGA-1019	Eriosoma_lanigerum	Eriosomatinae	Elan	Eriosoma_lanigerum
+GAGA-1020	Hormaphis_cornu	Hormaphidinae	Hcor	Hormaphis_cornu
+GAGA-1021	Macrosiphum_albifrons	Aphidinae	Malb	Macrosiphum_albifrons
+GAGA-1022	Macrosiphum_euphorbiae	Aphidinae	Meup	Macrosiphum_euphorbiae
+GAGA-1023	Melanaphis_sacchari	Aphidinae	Msac	Melanaphis_sacchari
+GAGA-1024	Metopolophium_dirhodum	Aphidinae	Mdir	Metopolophium_dirhodum
+GAGA-1025	Myzus_cerasi	Aphidinae	Mcer	Myzus_cerasi
+GAGA-1026	Myzus_ligustri	Aphidinae	Mlig	Myzus_ligustri
+GAGA-1027	Myzus_lythri	Aphidinae	Mlyt	Myzus_lythri
+GAGA-1028	Myzus_persicae	Aphidinae	Mper	Myzus_persicae
+GAGA-1029	Myzus_varians	Aphidinae	Mvar	Myzus_varians
+GAGA-1030	Nasonovia_ribisnigri	Aphidinae	Nrib	Nasonovia_ribisnigri
+GAGA-1031	Neotoxoptera_formosana	Aphidinae	Nfor	Neotoxoptera_formosana
+GAGA-1032	Pemphigus_obesinymphae	Pemphiginae	Pobe	Pemphigus_obesinymphae
+GAGA-1033	Pentalonia_nigronervosa	Aphidinae	Pnig	Pentalonia_nigronervosa
+GAGA-1034	Periphyllus_acericola	Chaitophorinae	Pace	Periphyllus_acericola
+GAGA-1035	Phorodon_humuli	Aphidinae	Phum	Phorodon_humuli
+GAGA-1036	Rhopalosiphum_maidis	Aphidinae	Rmai	Rhopalosiphum_maidis
+GAGA-1037	Rhopalosiphum_nymphaeae	Aphidinae	Rnym	Rhopalosiphum_nymphaeae
+GAGA-1038	Rhopalosiphum_padi	Aphidinae	Rpad	Rhopalosiphum_padi
+GAGA-1039	Schlechtendalia_chinensis	Pemphiginae	Schi	Schlechtendalia_chinensis
+GAGA-1040	Sipha_flava	Chaitophorinae	Sfla	Sipha_flava
+GAGA-1041	Sitobion_miscanthi	Aphidinae	Smis	Sitobion_miscanthi
+GAGA-1042	Tetraneura_akinire	Eriosomatinae	Taki	Tetraneura_akinire
+GAGA-1043	Therioaphis_trifolii	Aphidinae	Ttri	Therioaphis_trifolii
+GAGA-1044	Tuberolachnus_salignus	Lachninae	Tsal	Tuberolachnus_salignus
+GAGA-2001	Acyrthosiphon_pisum	Aphidinae	Apis	Acyrthosiphon_pisum
+GAGA-2002	Adelges_cooleyi	Adelginae	Acoo	Adelges_cooleyi
+GAGA-2003	Aphis_craccivora	Aphidinae	Acra	Aphis_craccivora
+GAGA-2004	Aphis_fabae	Aphidinae	Afab	Aphis_fabae
+GAGA-2005	Aphis_glycines	Aphidinae	Agly	Aphis_glycines
+GAGA-2006	Aphis_gossypii	Aphidinae	Agos	Aphis_gossypii
+GAGA-2007	Aphis_rumicis	Aphidinae	Arum	Aphis_rumicis
+GAGA-2008	Aphis_thalictri	Aphidinae	Atha	Aphis_thalictri
+GAGA-2009	Brachycaudus_cardui	Aphidinae	Bcar	Brachycaudus_cardui
+GAGA-2010	Brachycaudus_helichrysi	Aphidinae	Bhel	Brachycaudus_helichrysi
+GAGA-2011	Brachycaudus_klugkisti	Aphidinae	Bklu	Brachycaudus_klugkisti
+GAGA-2012	Brevicoryne_brassicae	Aphidinae	Bbra	Brevicoryne_brassicae
+GAGA-2013	Chaitophorus_viminalis	Chaitophorinae	Cvim	Chaitophorus_viminalis
+GAGA-2014	Cinara_cedri	Lachninae	Cced	Cinara_cedri
+GAGA-2015	Daktulosphaira_vitifoliae	Phylloxerinae	Dvit	Daktulosphaira_vitifoliae
+GAGA-2016	Diuraphis_noxia	Aphidinae	Dnox	Diuraphis_noxia
+GAGA-2017	Drepanosiphum_platanoidis	Drepanosiphinae	Dpla	Drepanosiphum_platanoidis
+GAGA-2018	Dysaphis_plantaginea	Aphidinae	Dypla	Dysaphis_plantaginea
+GAGA-2019	Eriosoma_lanigerum	Eriosomatinae	Elan	Eriosoma_lanigerum
+GAGA-2020	Hormaphis_cornu	Hormaphidinae	Hcor	Hormaphis_cornu
+GAGA-2021	Macrosiphum_albifrons	Aphidinae	Malb	Macrosiphum_albifrons
+GAGA-2022	Macrosiphum_euphorbiae	Aphidinae	Meup	Macrosiphum_euphorbiae
+GAGA-2023	Melanaphis_sacchari	Aphidinae	Msac	Melanaphis_sacchari
+GAGA-2024	Metopolophium_dirhodum	Aphidinae	Mdir	Metopolophium_dirhodum
+GAGA-2025	Myzus_cerasi	Aphidinae	Mcer	Myzus_cerasi
+GAGA-2026	Myzus_ligustri	Aphidinae	Mlig	Myzus_ligustri
+GAGA-2027	Myzus_lythri	Aphidinae	Mlyt	Myzus_lythri
+GAGA-2028	Myzus_persicae	Aphidinae	Mper	Myzus_persicae
+GAGA-2029	Myzus_varians	Aphidinae	Mvar	Myzus_varians
+GAGA-2030	Nasonovia_ribisnigri	Aphidinae	Nrib	Nasonovia_ribisnigri
+GAGA-2031	Neotoxoptera_formosana	Aphidinae	Nfor	Neotoxoptera_formosana
+GAGA-2032	Pemphigus_obesinymphae	Pemphiginae	Pobe	Pemphigus_obesinymphae
+GAGA-2033	Pentalonia_nigronervosa	Aphidinae	Pnig	Pentalonia_nigronervosa
+GAGA-2034	Periphyllus_acericola	Chaitophorinae	Pace	Periphyllus_acericola
+GAGA-2035	Phorodon_humuli	Aphidinae	Phum	Phorodon_humuli
+GAGA-2036	Rhopalosiphum_maidis	Aphidinae	Rmai	Rhopalosiphum_maidis
+GAGA-2037	Rhopalosiphum_nymphaeae	Aphidinae	Rnym	Rhopalosiphum_nymphaeae
+GAGA-2038	Rhopalosiphum_padi	Aphidinae	Rpad	Rhopalosiphum_padi
+GAGA-2039	Schlechtendalia_chinensis	Pemphiginae	Schi	Schlechtendalia_chinensis
+GAGA-2040	Sipha_flava	Chaitophorinae	Sfla	Sipha_flava
+GAGA-2041	Sitobion_miscanthi	Aphidinae	Smis	Sitobion_miscanthi
+GAGA-2042	Tetraneura_akinire	Eriosomatinae	Taki	Tetraneura_akinire
+GAGA-2043	Therioaphis_trifolii	Aphidinae	Ttri	Therioaphis_trifolii
+GAGA-2044	Tuberolachnus_salignus	Lachninae	Tsal	Tuberolachnus_salignus
+GAGA-3001	Acyrthosiphon_pisum	Aphidinae	Apis	Acyrthosiphon_pisum
+GAGA-3002	Adelges_cooleyi	Adelginae	Acoo	Adelges_cooleyi
+GAGA-3003	Aphis_craccivora	Aphidinae	Acra	Aphis_craccivora
+GAGA-3004	Aphis_fabae	Aphidinae	Afab	Aphis_fabae
+GAGA-3005	Aphis_glycines	Aphidinae	Agly	Aphis_glycines
+GAGA-3006	Aphis_gossypii	Aphidinae	Agos	Aphis_gossypii
+GAGA-3007	Aphis_rumicis	Aphidinae	Arum	Aphis_rumicis
+GAGA-3008	Aphis_thalictri	Aphidinae	Atha	Aphis_thalictri
+GAGA-3009	Brachycaudus_cardui	Aphidinae	Bcar	Brachycaudus_cardui
+GAGA-3010	Brachycaudus_helichrysi	Aphidinae	Bhel	Brachycaudus_helichrysi
+GAGA-3011	Brachycaudus_klugkisti	Aphidinae	Bklu	Brachycaudus_klugkisti
+GAGA-3012	Brevicoryne_brassicae	Aphidinae	Bbra	Brevicoryne_brassicae
+GAGA-3013	Chaitophorus_viminalis	Chaitophorinae	Cvim	Chaitophorus_viminalis
+GAGA-3014	Cinara_cedri	Lachninae	Cced	Cinara_cedri
+GAGA-3015	Daktulosphaira_vitifoliae	Phylloxerinae	Dvit	Daktulosphaira_vitifoliae
+GAGA-3016	Diuraphis_noxia	Aphidinae	Dnox	Diuraphis_noxia
+GAGA-3017	Drepanosiphum_platanoidis	Drepanosiphinae	Dpla	Drepanosiphum_platanoidis
+GAGA-3018	Dysaphis_plantaginea	Aphidinae	Dypla	Dysaphis_plantaginea
+GAGA-3019	Eriosoma_lanigerum	Eriosomatinae	Elan	Eriosoma_lanigerum
+GAGA-3020	Hormaphis_cornu	Hormaphidinae	Hcor	Hormaphis_cornu
+GAGA-3021	Macrosiphum_albifrons	Aphidinae	Malb	Macrosiphum_albifrons
+GAGA-3022	Macrosiphum_euphorbiae	Aphidinae	Meup	Macrosiphum_euphorbiae
+GAGA-3023	Melanaphis_sacchari	Aphidinae	Msac	Melanaphis_sacchari
+GAGA-3024	Metopolophium_dirhodum	Aphidinae	Mdir	Metopolophium_dirhodum
+GAGA-3025	Myzus_cerasi	Aphidinae	Mcer	Myzus_cerasi
+GAGA-3026	Myzus_ligustri	Aphidinae	Mlig	Myzus_ligustri
+GAGA-3027	Myzus_lythri	Aphidinae	Mlyt	Myzus_lythri
+GAGA-3028	Myzus_persicae	Aphidinae	Mper	Myzus_persicae
+GAGA-3029	Myzus_varians	Aphidinae	Mvar	Myzus_varians
+GAGA-3030	Nasonovia_ribisnigri	Aphidinae	Nrib	Nasonovia_ribisnigri
+GAGA-3031	Neotoxoptera_formosana	Aphidinae	Nfor	Neotoxoptera_formosana
+GAGA-3032	Pemphigus_obesinymphae	Pemphiginae	Pobe	Pemphigus_obesinymphae
+GAGA-3033	Pentalonia_nigronervosa	Aphidinae	Pnig	Pentalonia_nigronervosa
+GAGA-3034	Periphyllus_acericola	Chaitophorinae	Pace	Periphyllus_acericola
+GAGA-3035	Phorodon_humuli	Aphidinae	Phum	Phorodon_humuli
+GAGA-3036	Rhopalosiphum_maidis	Aphidinae	Rmai	Rhopalosiphum_maidis
+GAGA-3037	Rhopalosiphum_nymphaeae	Aphidinae	Rnym	Rhopalosiphum_nymphaeae
+GAGA-3038	Rhopalosiphum_padi	Aphidinae	Rpad	Rhopalosiphum_padi
+GAGA-3039	Schlechtendalia_chinensis	Pemphiginae	Schi	Schlechtendalia_chinensis
+GAGA-3040	Sipha_flava	Chaitophorinae	Sfla	Sipha_flava
+GAGA-3041	Sitobion_miscanthi	Aphidinae	Smis	Sitobion_miscanthi
+GAGA-3042	Tetraneura_akinire	Eriosomatinae	Taki	Tetraneura_akinire
+GAGA-3043	Therioaphis_trifolii	Aphidinae	Ttri	Therioaphis_trifolii
+GAGA-3044	Tuberolachnus_salignus	Lachninae	Tsal	Tuberolachnus_salignus

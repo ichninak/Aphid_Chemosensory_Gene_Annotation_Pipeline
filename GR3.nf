@@ -25,7 +25,7 @@ workflow gr3Workflow {
 
 process processCombineGR {
     tag { gagaID3 }
-    cpus 4
+    cpus params.threads2
     input:
         tuple val(id2), val(gagaID3), val(species), path(genome), val(PREM), val(PREM2), val(PREM3)
     output:

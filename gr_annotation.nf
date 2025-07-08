@@ -30,7 +30,7 @@ workflow grWorkflow {
 
 
 process processAbcenthGR {
-   tag { gagaID1 }
+    tag { gagaID1 }
     cpus params.threads
     input:
         tuple val(id2), val(gagaID1), val(species), path(genome), val(PREM)
@@ -40,7 +40,7 @@ process processAbcenthGR {
     """
     # HAPpy Abcenth GR
 
-    HAPpy --threads $cpus --annotator ABCENTH --hmm_dir ${params.db2GR} --genome ${genome} --output_dir ${params.out_base}/${gagaID1}
+    HAPpy --threads ${task.cpus} --annotator ABCENTH --hmm_dir ${params.db2GR} --genome ${genome} --output_dir ${params.out_base}/${gagaID1}
 
     cd ${params.out_base}/${gagaID1}
 
@@ -89,7 +89,7 @@ process processHappyGR {
     
     # HAPpy genewise GR
 
-    HAPpy --threads $cpus --genome ${genome} --output_dir ${params.out_base}/${gagaID2} --protein_seqs ${params.db_chemo}/All1_GR.fasta
+    HAPpy --threads ${task.cpus} --genome ${genome} --output_dir ${params.out_base}/${gagaID2} --protein_seqs ${params.db_chemo}/All1_GR.fasta
 
     cd ${params.out_base}/${gagaID2}
 
@@ -141,7 +141,7 @@ process processHappyGR {
 
 process processCombineGR {
     tag { gagaID3 }
-    cpus 4
+    cpus params.threads2
     input:
         tuple val(id2), val(gagaID3), val(species), path(genome), val(PREM), val(PREM2), val(PREM3)
     output:
