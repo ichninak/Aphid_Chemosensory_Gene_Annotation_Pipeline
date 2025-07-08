@@ -4,7 +4,7 @@ nextflow.enable.dsl = 2
 include { gr1Workflow } from './GR1.nf'
 include { gr2Workflow } from './GR2.nf'
 include { gr3Workflow } from './GR3.nf'
-include { orWorkflow } from './or_annotation.nf'
+include { orWorkflow } from './OR_annotation.nf'
 
 workflow {
     // run only the steps the user requested
