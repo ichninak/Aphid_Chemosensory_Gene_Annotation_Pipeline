@@ -1,26 +1,33 @@
 nextflow.enable.dsl = 2
 
 workflow gr3Workflow {
-    Channel
-        .fromPath("${params.genome_dir}/*.fa")
-        .map { it.getName() }
-        .sort()
-        .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
-        .index()
-        .map { idx, pair ->
-            def species = pair[0]
-            def genome = pair[1]
-            def id2 = String.format('%02d', idx+1)
-            def gagaID3 = "GAGA-30${id2}"
-            def PREM = "GAGA-00${id2}"
-            def PREM2 = "GAGA-10${id2}"
-            def PREM3 = "GAGA-20${id2}"
-            tuple(id2, gagaID3, species, genome, PREM, PREM2, PREM3)
-        }
-        .set { samples }
+    take:
+        gr1_out
+        gr2_out
+    
+    main:
+        Channel
+            .fromPath("${params.genome_dir}/*.fa")
+            .map { it.getName() }
+            .sort()
+            .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
+            .index()
+            .map { idx, pair ->
+                def species = pair[0]
+                def genome = pair[1]
+                def id2 = String.format('%02d', idx+1)
+                def gagaID3 = "GAGA-30${id2}"
+                def PREM = "GAGA-00${id2}"
+                def PREM2 = "GAGA-10${id2}"
+                def PREM3 = "GAGA-20${id2}"
+                tuple(id2, gagaID3, species, genome, PREM, PREM2, PREM3)
+            }
+            .set { samples }
 
-    samples
-        | processCombineGR
+        gr3_out = samples | processCombineGR
+        
+    emit:
+        gr3_out
 }
 
 process processCombineGR {
@@ -35,12 +42,11 @@ process processCombineGR {
     mkdir ${params.out_base}/${gagaID3}
     cd ${params.out_base}/${gagaID3}
 
-    # Get previous ABCENTH and genewise annotation GFF
+    # Get previous ABCENTH and genewise annotation GFF from the outputs of previous workflows
 
-
-    cp /projects/alterevo/00.GROR/TEST/${PREM2}/${PREM}_ABCENTH_clean_GR_renamed_all_nofragment.gff3 ABCENTH_clean_GR_renamed_all_nofragment.gff3
-    cp /projects/alterevo/00.GROR/TEST/${PREM2}/${PREM}_GRs.txt ABCENTH_GRs.txt
-    cp /projects/alterevo/00.GROR/TEST/${PREM3}/${PREM}_Genewise_GR_renamed_all.gff3 Genewise_GR_renamed_all.gff3
+    cp ${params.out_base}/${PREM2}/${PREM}_ABCENTH_clean_GR_renamed_all_nofragment.gff3 ABCENTH_clean_GR_renamed_all_nofragment.gff3
+    cp ${params.out_base}/${PREM2}/${PREM}_GRs.txt ABCENTH_GRs.txt
+    cp ${params.out_base}/${PREM3}/${PREM}_Genewise_GR_renamed_all.gff3 Genewise_GR_renamed_all.gff3
 
 
     echo "######## Get sugar and conserved GR receptors, and combine with genewise (priority for conserved GRs in ABCENTH)"
@@ -65,7 +71,7 @@ process processCombineGR {
     echo "######## Generate the GFF3 and protein file"
 
     perl ${params.script_dir}/gff2fasta_v3.pl ${genome} GenewiseAbcenth.gff3 GenewiseAbcenth
-    sed 's/X*$//' GenewiseAbcenth.pep.fasta > GenewiseAbcenth.pep.fasta.tmp
+    sed 's/X*\$//' GenewiseAbcenth.pep.fasta > GenewiseAbcenth.pep.fasta.tmp
     mv GenewiseAbcenth.pep.fasta.tmp GenewiseAbcenth.pep.fasta
 
     echo "######## Run Interpro in the protein set"
@@ -83,7 +89,7 @@ process processCombineGR {
     makeblastdb -in OR_masAbcenth_db.fasta -dbtype prot
     blastp -query GenewiseAbcenth.pep.fasta -db OR_masAbcenth_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.ORblast.txt -num_threads 4 -max_target_seqs 5
 
-    blastp -query GenewiseAbcenth.pep.fasta -db /home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db_chemo/AGLY_GR.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.GRaglyblast.txt -num_threads 4 -max_target_seqs 5
+    blastp -query GenewiseAbcenth.pep.fasta -db ${params.db_chemo}/AGLY_GR.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.GRaglyblast.txt -num_threads 4 -max_target_seqs 5
 
 
     echo "######## Run script to rename the gff3 and generate the protein file and summary table"

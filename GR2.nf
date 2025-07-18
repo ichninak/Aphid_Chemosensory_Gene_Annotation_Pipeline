@@ -1,24 +1,30 @@
 nextflow.enable.dsl = 2
 
 workflow gr2Workflow {
-    Channel
-        .fromPath("${params.genome_dir}/*.fa")
-        .map { it.getName() }
-        .sort()
-        .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
-        .index()
-        .map { idx, pair ->
-            def species = pair[0]
-            def genome = pair[1]
-            def id2 = String.format('%02d', idx+1)
-            def gagaID2 = "GAGA-20${id2}"
-            def PREM = "GAGA-00${id2}"
-            tuple(id2, gagaID2, species, genome, PREM)
-        }
-        .set { samples }
+    take:
+        gr1_out
+    
+    main:
+        Channel
+            .fromPath("${params.genome_dir}/*.fa")
+            .map { it.getName() }
+            .sort()
+            .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
+            .index()
+            .map { idx, pair ->
+                def species = pair[0]
+                def genome = pair[1]
+                def id2 = String.format('%02d', idx+1)
+                def gagaID2 = "GAGA-20${id2}"
+                def PREM = "GAGA-00${id2}"
+                tuple(id2, gagaID2, species, genome, PREM)
+            }
+            .set { samples }
 
-    samples
-        | processHappyGR
+        gr2_out = samples | processHappyGR
+    
+    emit:
+        gr2_out
 }
 
 process processHappyGR {
@@ -47,7 +53,7 @@ process processHappyGR {
     gt gff3 -force -sort -tidy -retainids -o all_genewise_predictions_corrected.gff3 all_genewise_predictions_corrected_unclean.gff3
 
     perl ${params.script_dir}/gff2fasta_v3.pl ${genome} all_genewise_predictions_corrected.gff3 all_genewise_predictions_corrected
-    sed 's/X*$//' all_genewise_predictions_corrected.pep.fasta > all_genewise_predictions_corrected.pep.fasta.tmp
+    sed 's/X*\$//' all_genewise_predictions_corrected.pep.fasta > all_genewise_predictions_corrected.pep.fasta.tmp
     mv all_genewise_predictions_corrected.pep.fasta.tmp all_genewise_predictions_corrected.pep.fasta
 
     # convert cds to exon, and get orf to make genes start with M
@@ -57,7 +63,7 @@ process processHappyGR {
     grep -v 'exon' all_genewise_predictions_corrected_cdstoexon_tocds.gff3 > Genewise.gff3
 
     perl ${params.script_dir}/gff2fasta_v3.pl ${genome} Genewise.gff3 Genewise
-    sed 's/X*$//' Genewise.pep.fasta > Genewise.pep.fasta.tmp
+    sed 's/X*\$//' Genewise.pep.fasta > Genewise.pep.fasta.tmp
     mv Genewise.pep.fasta.tmp Genewise.pep.fasta
 
     # run interproscan in the protein set

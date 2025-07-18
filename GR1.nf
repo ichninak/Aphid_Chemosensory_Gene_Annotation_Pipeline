@@ -1,23 +1,27 @@
 nextflow.enable.dsl = 2
 
 workflow gr1Workflow {
-    Channel
-        .fromPath("${params.genome_dir}/*.fa")
-        .map { it.getName() }
-        .sort()
-        .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
-        .index()
-        .map { idx, pair ->
-            def species = pair[0]
-            def genome = pair[1]
-            def id2 = String.format('%02d', idx+1)
-            def gagaID1 = "GAGA-10${id2}"
-            def PREM = "GAGA-00${id2}"
-            tuple(id2, gagaID1, species, genome, PREM)
-        }
-        .set { samples }
+    main:
+        Channel
+            .fromPath("${params.genome_dir}/*.fa")
+            .map { it.getName() }
+            .sort()
+            .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
+            .index()
+            .map { idx, pair ->
+                def species = pair[0]
+                def genome = pair[1]
+                def id2 = String.format('%02d', idx+1)
+                def gagaID1 = "GAGA-10${id2}"
+                def PREM = "GAGA-00${id2}"
+                tuple(id2, gagaID1, species, genome, PREM)
+            }
+            .set { samples }
 
-    samples | processAbcenthGR
+        gr1_out = samples | processAbcenthGR
+        
+    emit:
+        gr1_out
 }
 
 process processAbcenthGR {
@@ -43,7 +47,7 @@ process processAbcenthGR {
     gt gff3 -sort -tidy -retainids -o ABCENTH_clean.gff3 ABCENTH.gff3
 
     perl ${params.script_dir}/gff2fasta_v3.pl ${genome} ABCENTH_clean.gff3 ABCENTH_clean
-    sed s/X*$// ABCENTH_clean.pep.fasta > ABCENTH_clean.pep.fasta.tmp
+    sed s/X*\$// ABCENTH_clean.pep.fasta > ABCENTH_clean.pep.fasta.tmp
     mv ABCENTH_clean.pep.fasta.tmp ABCENTH_clean.pep.fasta
 
     # run interproscan in the protein set
