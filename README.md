@@ -13,3 +13,7 @@ you need Java (17 or newer):
 you need nextflow:
 
 ``` conda install -c bioconda nextflow ```
+
+you need HAPpy-abcenth:
+
+`` conda install -c bioconda happy ``
