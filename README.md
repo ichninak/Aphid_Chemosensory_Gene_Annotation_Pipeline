@@ -56,7 +56,7 @@ HAPpy --genome <target genome fasta> --ref_genome <one or more reference genome 
 --annotations <one gtf per ref genome> --cutoff <p distance at which proteins are clustered, 0.45 for ant ORs> \
 --search_mode exons --annotator ABCENTH
 ```
-You can use my own HMM files in [dbOR.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/dbOR.zip) created across 44 species of aphids:
+You can use my own HMM files in [dbOR.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/dbOR.zip) created across 44 species of aphids:
 
 <img width="689" height="506" alt="tree_44species" src="https://github.com/user-attachments/assets/8c256946-bbc3-491e-a4db-2f07cdeb2ca7" />
 
@@ -65,27 +65,27 @@ Next, The OR annotation are converted to GFF3 format, and predicted protein sequ
  - Compared to reference OR datasets (BLAST) to identify ORco and rename ORs
  - Classified as complete, partial or pseudogene
 
-The sequence datatsets used can be found in [db_chemo.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/db_chemo.zip).
+The sequence datatsets used can be found in [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip).
 
 ## GRs: Gustatory Receptor Annotation
 
 The annotation of the gustatory receptor is performed using the [HAPpy-ABCENTH pipeline](https://github.com/biorover/HAPpy-ABCENTH). However, here we performed both ABCENTH and HAPpy method to annotate the GRs, and combine this both methods to generate a final gene model. The are also classified into complete, partial and pseudogenes.
 
-We began by assembling a dataset based on high-quality gene models of gustatory receptors (GRs), which served as the foundation for subsequent GR annotations. This dataset includes GR sequences from 44 aphid species, labeled with the identifiers GAGA-ID: (GAGA-0001 to GAGA-0044). The corresponding protein sequences are stored in the file [db_chemo.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/db_chemo.zip). the file [GAGA_species_list.txt](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/GAGA_species_list.txt) contains the species names matched to each GAGA code. Additionally, we used the aphids genome annotations to construct exon HMM profiles with the HAPpy-ABCENTH tool. These profiles are compiled in the archive [db2GR.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/db2GR.zip).
+We began by assembling a dataset based on high-quality gene models of gustatory receptors (GRs), which served as the foundation for subsequent GR annotations. This dataset includes GR sequences from 44 aphid species, labeled with the identifiers GAGA-ID: (GAGA-0001 to GAGA-0044). The corresponding protein sequences are stored in the file [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip). the file [GAGA_species_list.txt](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/GAGA_species_list.txt) contains the species names matched to each GAGA code. Additionally, we used the aphids genome annotations to construct exon HMM profiles with the HAPpy-ABCENTH tool. These profiles are compiled in the archive [db2GR.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db2GR.zip).
 
 ### 1. GR annotation with ABCENTH methods
-`GR1.nf` The first pipeline performs gustatory receptor (GR) annotation using the ABCENTH tool. it requires the genome assembly and the directory containing the previously described HMM profiles. in addition, the path to the [db_chemo.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/db_chemo.zip) folder must be set (as specified in file [nextflow.config](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/nextflow.config)), along with the OR annotations, which help ensure that no olfactory receptors (ORs) are misidentified as GRs due to their high sequence similarity. All scripts needed to execute this pipeline are available in the [scripts](https://github.com/ichninak/Aphids_Annotation_OR_GR/tree/main/script) folder.
+`GR1.nf` The first pipeline performs gustatory receptor (GR) annotation using the ABCENTH tool. it requires the genome assembly and the directory containing the previously described HMM profiles. in addition, the path to the [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip) folder must be set (as specified in file [nextflow.config](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/nextflow.config)), along with the OR annotations, which help ensure that no olfactory receptors (ORs) are misidentified as GRs due to their high sequence similarity. All scripts needed to execute this pipeline are available in the [scripts](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/tree/main/script) folder.
 
 ### 2. GR annotation with HAPpy method
-In this second pipeline, GRs are annotated through homology-based prediction using HAPpy, which relies on GeneWise. The required inputs include the genome assembly and the previously mentioned GR protein dataset [db_chemo.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/db_chemo.zip). Similar to the first pipeline, it is essential to provide the path to the [db_chemo.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/db_chemo.zip) directory into [nextflow.config](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/nextflow.config) and the OR annotations. All scripts necessary for running this step are located in the [scripts](https://github.com/ichninak/Aphids_Annotation_OR_GR/tree/main/script) folder.
+In this second pipeline, GRs are annotated through homology-based prediction using HAPpy, which relies on GeneWise. The required inputs include the genome assembly and the previously mentioned GR protein dataset [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip). Similar to the first pipeline, it is essential to provide the path to the [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip) directory into [nextflow.config](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/nextflow.config) and the OR annotations. All scripts necessary for running this step are located in the [scripts](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/tree/main/script) folder.
 
 ### 3. Merging both method
 The third pipeline consolidates the GR models produced in the first two steps to generate a final set of gene models.
 
 ## Input Requirements 
 - Genome assembly in Fasta format.
-- HMM profiles: [dbOR.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/dbOR.zip) and [db2GR.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/db2GR.zip).
-- [db_chemo.zip](https://github.com/ichninak/Aphids_Annotation_OR_GR/blob/main/db_chemo.zip).
+- HMM profiles: [dbOR.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/dbOR.zip) and [db2GR.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db2GR.zip).
+- [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip).
 
 ## Output Files
 Each module produces:
