@@ -1,5 +1,8 @@
-# Annotation of chemosensory genes families of Aphids.
-Workflow: a pipeline adapted from Ants annotation with nextflow.
+# Aphid Chemosensory Gene Annotation Pipeline
+
+This project adapts the chemosensory gene annotation pipeline originally developed for ant genomes ([GAGA project](https://github.com/schraderL/GAGA)) to aphid genomes. The workflow has been reimplemented using [Nextflow](https://www.nextflow.io/) for better scalability and reproducibility.
+
+It reuses core Perl scripts from the original GAGA repository (e.g., `get_genewise_gtf_corrected.pl`, `run_OR_classification.pl`) with minor modifications, and integrates them into an automated pipeline suitable for aphid species.
 
 in progress not done 
 
