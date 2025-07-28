@@ -8,7 +8,7 @@ in progress not done
 ## requirement
 
   - Java (17 or newer):
-  - Nextflow
+  - [Nextflow](https://www.nextflow.io/docs/latest/install.html)
   - [HAPpy-ABCENTH](https://github.com/biorover/HAPpy-ABCENTH)
   - [Genome tools](https://genometools.org/)
   - Blast
@@ -20,4 +20,17 @@ in progress not done
 Installation of essential dependance for the main dependance:
 
 ```bash
-conda create -n Aphids-nf -c bioconda -c etetoolkit python=3 numpy ete3 wise2 mafft=7 hmmer=3 intervaltree pandas perl
+conda create -n aphids_nf -c bioconda -c etetoolkit python=3 numpy ete3 wise2 mafft=7 hmmer=3 intervaltree pandas perl
+conda activate aphids_nf
+```
+
+installation of all main dependencie:
+
+```bash
+conda install -c bioconda -c conda-forge openjdk nextflow genometools-genometools blast interproscan gemoma=1.7.1
+```
+
+installation of HAPpy-ABCENTH:
+```bash
+pip install HAPpy-ABCENTH
+```
