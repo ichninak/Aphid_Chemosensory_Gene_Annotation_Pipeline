@@ -100,6 +100,10 @@ This pipeline reuses core annotation logic and tools from the [GAGA project](htt
 These components are used within this Nextflow implementation  
 
 ## TODO 
+- [ ]  Finalize OBP annotation module
+- [ ]  Improve modularity of Nextflow processes
+- [ ]  Replace or wrap Perl scripts in native DSL processes
+- [ ]  Add containerization support (e.g. Docker or Singularity)
 
 ## Contact
 <ins> Maintainer</ins>: **Ishaac Chninak**
