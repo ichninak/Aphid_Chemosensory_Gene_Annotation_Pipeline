@@ -1,5 +1,5 @@
-# Aphids_Annotation_OR_GR
-Workflow: a pipeline adapted from Ants annotation. 
+# Annotation of chemosensory genes families of Aphids.
+Workflow: a pipeline adapted from Ants annotation with nextflow.
 
 in progress not done 
 
@@ -34,3 +34,6 @@ installation of HAPpy-ABCENTH:
 ```bash
 pip install HAPpy-ABCENTH
 ```
+
+# Annotation of Odorant Receptor (OR) 
+The annotation of the odorant receptor is conducted using 
