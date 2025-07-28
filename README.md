@@ -6,8 +6,14 @@ in progress not done
 # Installation
 
 ## requirement
-you need Java (17 or newer):
-
+  -Java (17 or newer):
+  -Nextflow
+  -Happy-ABCENTH
+  -genometools
+  -Blast
+  -Interproscan
+  -GeMoMa
+  
 ``` conda install -c conda-forge openjdk ```
 
 you need nextflow:
