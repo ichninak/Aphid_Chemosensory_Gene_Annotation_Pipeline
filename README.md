@@ -19,7 +19,7 @@ in progress not done
   - [GeMoMa v1.7.1](https://www.jstacs.de/index.php/GeMoMa) (Note that newer versions will not work in this pipeline, as the module CompareTranscripts has been modified)
 
 ### 2. Environnement Setup
-Create a conda environnemet with the required tools:
+Create a conda environement with the required tools:
 ```bash
 conda create -n aphid-nf -c bioconda -c etetoolkit python=3 numpy ete3 wise2 mafft=7 hmmer=3 intervaltree pandas perl
 conda activate aphids-nf
