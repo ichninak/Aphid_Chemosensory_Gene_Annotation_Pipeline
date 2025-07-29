@@ -22,7 +22,7 @@ in progress not done
 Create a conda environnemet with the required tools:
 ```bash
 conda create -n aphid-nf -c bioconda -c etetoolkit python=3 numpy ete3 wise2 mafft=7 hmmer=3 intervaltree pandas perl
-conda activate aphids_nf
+conda activate aphids-nf
 ```
 
 Installation of Main dependencies:
