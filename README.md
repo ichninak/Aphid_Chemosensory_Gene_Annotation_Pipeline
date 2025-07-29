@@ -41,6 +41,15 @@ Example command:
 nextflow run main.nf --OR true --GR true
 (--genome path/to/genome.fa --outdir results/)
 ```
+option:
+ - `--genome /path/to/genome/dir`
+ - `--script_dir /path/to/script`
+ - `--db_chemo /path/to/db_chemo`
+ - `--db2GR "/chemin/custom/db2GR"` 
+ - `--dbOR "/chemin/custom/dbOR"`
+ - `--out_base /path/to/output`
+ - `--threads n` for HAPpy-ABCENTH pipeline, initial is 50
+ - `--threads2 n` for the third script of GR, initial is 20
 available modules:
  - `--OR` for ordorant receptor annotation (running the file `OR_annotation`)
  - `--GR` for gustatory receptor annotation (running the files `GR1.nf`, `GR2.nf`, `GR3.nf`)
