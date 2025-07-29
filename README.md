@@ -80,7 +80,7 @@ We began by assembling a dataset based on high-quality gene models of gustatory 
 In this second pipeline, GRs are annotated through homology-based prediction using HAPpy, which relies on GeneWise. The required inputs include the genome assembly and the previously mentioned GR protein dataset [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip). Similar to the first pipeline, it is essential to provide the path to the [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip) directory into [nextflow.config](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/nextflow.config) and the OR annotations. All scripts necessary for running this step are located in the [scripts](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/tree/main/script) folder.
 
 ### 3. Merging both method
-The third pipeline consolidates the GR models produced in the first two steps to generate a final set of gene models.
+The third pipeline combine the GR models produced in the first two steps to generate a final set of gene models.
 
 ## Input Requirements 
 - Genome assembly in Fasta format.
