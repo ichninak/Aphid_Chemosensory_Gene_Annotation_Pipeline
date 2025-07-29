@@ -7,8 +7,8 @@ my $dirname = dirname(__FILE__);
 # Changed to rename ORs in scaffold order
 # Changed to keep in the final GFF all OR > 100|50aa, name them as fragmentOR[number]
 
-# usage: perl run_OR_classification.pl ABCENTH_clean.gff OUTNAME(NCBI-0001) GENOME
-# perl run_OR_classification.pl testcleanfix.gff3 NCBI-0001 /home/projects/ku_00039/people/joeviz/GAGA_genomes/Genome_assemblies/GAGA_all_final_assemblies_oldv/NCBI-0001_Ooceraea_biroi_dupsrm_filt.fasta
+# usage: perl run_OR_classification.pl ABCENTH_clean.gff OUTNAME(GAGA-0001) GENOME
+# perl run_OR_classification.pl testcleanfix.gff3 GAGA-0001 /home/projects/ku_00039/people/joeviz/GAGA_genomes/Genome_assemblies/GAGA_all_final_assemblies_oldv/NCBI-0001_Ooceraea_biroi_dupsrm_filt.fasta
 
 # The script will use the following files that need to be previously generated: ABCENTH_clean.pep.fasta ABCENTH_clean.pep.fasta.tsv(interpro) ABCENTH_clean.pep.fasta.ORcoblast.txt ABCENTH_clean.pep.fasta.ORblast.txt  
 # It requires to have the file with GAGA id and short name to rename the genes in $gagatable line 39.
@@ -419,7 +419,7 @@ foreach my $seanprotcoord (sort { $a <=> $b } (keys %{$clusterorder{$seanprotsca
 
 
 
-		# Count 9 exon ORs
+		# Count 7 exon ORs
 		if ($exonnumber{$prot} == 7){
 			if ($status =~ /Complete/){
 				$ninec++;
