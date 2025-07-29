@@ -106,7 +106,15 @@ workflow {
           --OR true          Run OR annotation workflow
           --GR true          Run GR annotation workflow (requires OR to be done first)
           --OR true --GR true   Run both OR and GR workflows in sequence
-        
+          --genome <path>  Path to the genome FASTA file (required for OR and GR workflows)
+          --out_base <path>  Base output directory for results (default: ./results)
+          --script_dir <path>  Path to the script for OR annotation
+          --db_chemo <path>  Path to the chemoreceptor database
+          --db2GR <path>  Path to the database for GR annotation
+          --dbOR <path>  Path to the database for OR annotation
+          --threads <int>  Number of threads to use (default: 50)
+          --threads2 <int>  Number of threads to use for second workflow (default: 20)
+
         EXAMPLES:
           nextflow run main.nf --OR true              # Run OR annotation only
           nextflow run main.nf --GR true              # Run GR annotation (OR must exist)
