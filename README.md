@@ -91,6 +91,9 @@ The third pipeline combine the GR models produced in the first two steps to gene
 
 ## Input Requirements 
 - Genome assembly in Fasta format.
+
+If you have more or fewer genomes than I do, you need to modify the file [GAGA_species_list.txt](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/GAGA_species_list.txt) to match your genomes and their GAGA IDs.
+It is mandatory to sort your genomes alphabetically in [GAGA_species_list.txt](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/GAGA_species_list.txt), as the genomes will be automatically sorted in your file.
 - HMM profiles: [dbOR.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/dbOR.zip) and [db2GR.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db2GR.zip).
 - [db_chemo.zip](https://github.com/ichninak/Aphid_Chemosensory_Gene_Annotation_Pipeline/blob/main/db_chemo.zip).
 
@@ -110,7 +113,7 @@ These components are used within this Nextflow implementation
 - [ ]  Finalize OBP annotation module
 - [ ]  Improve modularity of Nextflow processes
 - [ ]  Replace or wrap Perl scripts in native DSL processes
-- [ ]  Add containerization support (e.g. Docker or Singularity)
+- [ ]  Add containerization support 
 
 ## Contact
 <ins> Maintainer</ins>: **Ishaac Chninak**
