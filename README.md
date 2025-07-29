@@ -39,7 +39,6 @@ pip install HAPpy-ABCENTH
 Example command:
 ```bash
 nextflow run main.nf --OR true --GR true
-(--genome path/to/genome.fa --outdir results/)
 ```
 option:
  - `--genome /path/to/genome/dir`
