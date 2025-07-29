@@ -50,7 +50,6 @@ option:
  - `--out_base /path/to/output`
  - `--threads n` for HAPpy-ABCENTH pipeline, initial is 50
  - `--threads2 n` for the third script of GR, initial is 20
-available modules:
  - `--OR` for ordorant receptor annotation (running the file `OR_annotation`)
  - `--GR` for gustatory receptor annotation (running the files `GR1.nf`, `GR2.nf`, `GR3.nf`)
  - `--OBP` (in development)
