@@ -74,13 +74,13 @@ process processHappyGR {
 
     blastp -query Genewise.pep.fasta -db ${params.db_chemo}/ORco_db.fasta -outfmt "6 std qlen slen" -out Genewise.pep.fasta.ORcoblast.txt -num_threads 4
     #blastp -query Genewise.pep.fasta -db ${params.db_chemo}/OR_db.fasta -outfmt "6 std qlen slen" -out Genewise.pep.fasta.ORblast.txt -num_threads 4 -max_target_seqs 5
-    blastp -query Genewise.pep.fasta -db ${params.db_chemo}/All1_GR.fasta -outfmt "6 std qlen slen" -out Genewise.pep.fasta.GRblast.txt -num_threads 4 -max_target_seqs 5
+    blastp -query Genewise.pep.fasta -db ${params.db_chemo}/GR_db.fasta -outfmt "6 std qlen slen" -out Genewise.pep.fasta.GRblast.txt -num_threads 4 -max_target_seqs 5
 
     cat ${params.db_chemo}/OR_db.fasta ${params.out_base}/${PREM}/${PREM}_ABCENTH_clean_OR_renamed_all.pep.fasta > OR_masAbcenth_db.fasta
     makeblastdb -in OR_masAbcenth_db.fasta -dbtype prot
     blastp -query Genewise.pep.fasta -db OR_masAbcenth_db.fasta -outfmt "6 std qlen slen" -out Genewise.pep.fasta.ORblast.txt -num_threads 4 -max_target_seqs 5
 
-    blastp -query Genewise.pep.fasta -db ${params.db_chemo}/AGLY_GR.fasta -outfmt "6 std qlen slen" -out Genewise.pep.fasta.GRaglyblast.txt -num_threads 4 -max_target_seqs 5
+    blastp -query Genewise.pep.fasta -db ${params.db_chemo}/GR_dmel_db.fasta -outfmt "6 std qlen slen" -out Genewise.pep.fasta.GRdmelblast.txt -num_threads 4 -max_target_seqs 5
 
     # run script to rename the gff3 and generate the protein and summary table
 

@@ -147,7 +147,7 @@ while(<File>){
 close File;
 
 my %dmelblast; my %dmelblasteval;
-my $blastdmelfile = "$prefix".".pep.fasta.GRaglyblast.txt";
+my $blastdmelfile = "$prefix".".pep.fasta.GRdmelblast.txt";
 open (File, "<", $blastdmelfile);
 while(<File>){
 	chomp;

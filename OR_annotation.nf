@@ -59,7 +59,7 @@ process processORAnnotation {
 
     blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/ORco_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORcoblast.txt -num_threads 40
     blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/OR_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORblast.txt -num_threads 40 -max_target_seqs 5
-    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/All1_GR.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.GRblast.txt -num_threads 40 -max_target_seqs 5
+    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/GR_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.GRblast.txt -num_threads 40 -max_target_seqs 5
 
     # classification 
     

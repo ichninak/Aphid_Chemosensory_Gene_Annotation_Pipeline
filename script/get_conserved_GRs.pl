@@ -18,7 +18,7 @@ if ($intable =~ /(\S+)\_GRs.txt/){
 } else {die "Can't find prefix in $intable file\n";}
 
 my $outgffall = "$prefix"."\_GR_all_renamed.gff3"; 
-my $outgff = "$prefix"."\_GR_Aglyconserved_renamed.gff3"; 
+my $outgff = "$prefix"."\_GR_Dmelconserved_renamed.gff3"; 
 
 # Read input table
 
