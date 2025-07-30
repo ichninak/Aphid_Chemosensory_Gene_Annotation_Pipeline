@@ -39,7 +39,7 @@ process processHappyGR {
     
     # HAPpy genewise GR
 
-    HAPpy --threads ${task.cpus} --genome ${genome} --output_dir ${params.out_base}/${gagaID2} --protein_seqs ${params.db_chemo}/All1_GR.fasta
+    HAPpy --threads ${task.cpus} --genome ${genome} --output_dir ${params.out_base}/${gagaID2} --protein_seqs ${params.db_chemo}/GR_db.fasta
 
     cd ${params.out_base}/${gagaID2}
 
