@@ -40,6 +40,11 @@ Example command:
 ```bash
 nextflow run main.nf --OR true --GR true
 ```
+Launch with SLURM:
+```bash
+sbatch run_nextflow.sh
+```
+
 option:
  - `--genome /path/to/genome/dir`
  - `--script_dir /path/to/script`
