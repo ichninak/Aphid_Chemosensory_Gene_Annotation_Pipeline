@@ -15,6 +15,6 @@ echo "Start at $(date)"
 
 
 # Launch the pipeline
-nextflow run main.nf -OR true -resume
+nextflow run main.nf --OR true -resume
 
 echo "end at $(date)"
