@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=nextflow_job
-#SBATCH --cpus-per-task=160       
-#SBATCH --mem=200G                
+#SBATCH --cpus-per-task=50       
+#SBATCH --mem=20G                
 #SBATCH --time=24:00:00          
-#SBATCH --output=nextflow_%j.out
-#SBATCH --error=nextflow_%j.err
+#SBATCH --output=nextflow.out
+#SBATCH --error=nextflow.err
 
 # Load necessary modules
 source /local/miniconda3/etc/profile.d/conda.sh
@@ -16,6 +16,6 @@ echo "Start at $(date)"
 
 
 # Launch the pipeline
-nextflow run main.nf --OR true -resume
+nextflow run main.nf --OR true -resume -profile slurm
 
 echo "end at $(date)"
