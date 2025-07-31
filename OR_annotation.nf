@@ -8,7 +8,7 @@ workflow orWorkflow {
             .toSortedList()
             .flatten()
             .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
-            .index()
+            .enumerate()
             .map{ idx, pair ->
                 def species = pair[0]
                 def genome = pair[1]
