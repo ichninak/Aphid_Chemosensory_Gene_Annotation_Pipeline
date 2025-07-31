@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=nextflow_job
-#SBATCH --cpus-per-task=50       
-#SBATCH --mem=20G                
+#SBATCH --cpus-per-task=4        # Juste pour Nextflow principal
+#SBATCH --mem=8G                 # Juste pour Nextflow principal                
 #SBATCH --time=24:00:00          
 #SBATCH --output=nextflow.out
 #SBATCH --error=nextflow.err
