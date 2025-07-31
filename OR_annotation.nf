@@ -5,7 +5,8 @@ workflow orWorkflow {
         Channel
             .fromPath("${params.genome_dir}/*.fa")
             .map { it.getName() }
-            .sort()
+            .toSortedList()
+            .flatten()
             .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
             .index()
             .map{ idx, pair ->
