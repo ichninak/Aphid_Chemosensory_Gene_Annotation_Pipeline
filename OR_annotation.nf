@@ -8,13 +8,15 @@ workflow orWorkflow {
             .toSortedList()
             .flatten()
             .map { name -> tuple(name.replaceFirst(/\.fa$/,''), file("${params.genome_dir}/${name}")) }
-            .enumerate()
-            .map{ idx, pair ->
-                def species = pair[0]
-                def genome = pair[1]
-                def id2 = String.format('%02d', idx+1)
-                def gagaID = "GAGA-00${id2}"
-                tuple(id2, gagaID, species, genome)
+            .toList()
+            .flatMap { list ->
+                list.withIndex().collect { pair, idx ->
+                    def species = pair[0]
+                    def genome = pair[1]
+                    def id2 = String.format('%02d', idx+1)
+                    def gagaID = "GAGA-00${id2}"
+                    tuple(id2, gagaID, species, genome)
+                }
             }
             .set { samples }
 
