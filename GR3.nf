@@ -76,20 +76,20 @@ process processCombineGR {
 
     echo "######## Run Interpro in the protein set"
 
-    interproscan.sh -i GenewiseAbcenth.pep.fasta -t p -goterms -iprlookup -cpu 4     ## COMMENTED BECAUSE IT IS ALREADY RUN!!!!!
+    interproscan.sh -i GenewiseAbcenth.pep.fasta -t p -goterms -iprlookup -cpu ${task.cpus}     ## COMMENTED BECAUSE IT IS ALREADY RUN!!!!!
 
 
     echo "######## Run blast with ORs to obtain names"
 
 
-    blastp -query GenewiseAbcenth.pep.fasta -db ${params.db_chemo}/ORco_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.ORcoblast.txt -num_threads 4
-    blastp -query GenewiseAbcenth.pep.fasta -db ${params.db_chemo}/GR_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.GRblast.txt -num_threads 4 -max_target_seqs 5
+    blastp -query GenewiseAbcenth.pep.fasta -db ${params.db_chemo}/ORco_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.ORcoblast.txt -num_threads ${task.cpus}
+    blastp -query GenewiseAbcenth.pep.fasta -db ${params.db_chemo}/GR_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.GRblast.txt -num_threads ${task.cpus} -max_target_seqs 5
 
     cat ${params.db_chemo}/OR_db.fasta ${params.out_base}/${PREM}/${PREM}_ABCENTH_clean_OR_renamed_all.pep.fasta > OR_masAbcenth_db.fasta
     makeblastdb -in OR_masAbcenth_db.fasta -dbtype prot
-    blastp -query GenewiseAbcenth.pep.fasta -db OR_masAbcenth_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.ORblast.txt -num_threads 4 -max_target_seqs 5
+    blastp -query GenewiseAbcenth.pep.fasta -db OR_masAbcenth_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.ORblast.txt -num_threads ${task.cpus} -max_target_seqs 5
 
-    blastp -query GenewiseAbcenth.pep.fasta -db ${params.db_chemo}/GR_dmel_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.GRdmelblast.txt -num_threads 4 -max_target_seqs 5
+    blastp -query GenewiseAbcenth.pep.fasta -db ${params.db_chemo}/GR_dmel_db.fasta -outfmt "6 std qlen slen" -out GenewiseAbcenth.pep.fasta.GRdmelblast.txt -num_threads ${task.cpus} -max_target_seqs 5
 
 
     echo "######## Run script to rename the gff3 and generate the protein file and summary table"

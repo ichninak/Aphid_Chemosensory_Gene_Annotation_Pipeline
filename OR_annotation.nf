@@ -34,7 +34,7 @@ process processORAnnotation {
     """
     # Run HAPpy ABCENTH for OR 
 
-    HAPpy --threads 50 --annotator ABCENTH --hmm_dir ${params.dbOR} --genome ${genome} --output_dir ${params.out_base}/${gagaID}
+    HAPpy --threads ${task.cpus} --annotator ABCENTH --hmm_dir ${params.dbOR} --genome ${genome} --output_dir ${params.out_base}/${gagaID}
 
     cd ${params.out_base}/${gagaID}
 
@@ -53,13 +53,13 @@ process processORAnnotation {
 
     echo '----------------------running Interproscan in the protein set----------------------'
     
-    interproscan.sh -i ABCENTH_clean.pep.fasta -t p -goterms -iprlookup -cpu 40
+    interproscan.sh -i ABCENTH_clean.pep.fasta -t p -goterms -iprlookup -cpu ${task.cpus}
 
     echo '----------------------run BLAST with ORs database----------------------'
 
-    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/ORco_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORcoblast.txt -num_threads 40
-    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/OR_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORblast.txt -num_threads 40 -max_target_seqs 5
-    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/GR_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.GRblast.txt -num_threads 40 -max_target_seqs 5
+    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/ORco_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORcoblast.txt -num_threads ${task.cpus}
+    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/OR_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.ORblast.txt -num_threads ${task.cpus} -max_target_seqs 5
+    blastp -query ${params.out_base}/${gagaID}/ABCENTH_clean.pep.fasta -db ${params.db_chemo}/GR_db.fasta -outfmt "6 std qlen slen" -out ABCENTH_clean.pep.fasta.GRblast.txt -num_threads ${task.cpus} -max_target_seqs 5
 
     # classification 
     
