@@ -16,6 +16,6 @@ echo "Start at $(date)"
 
 
 # Launch the pipeline
-nextflow run main.nf --OR true -resume -profile slurm
+nextflow run main.nf --OR true -profile slurm
 
 echo "end at $(date)"
