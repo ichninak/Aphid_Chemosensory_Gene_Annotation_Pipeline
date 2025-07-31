@@ -7,6 +7,7 @@
 #SBATCH --error=nextflow_%j.err
 
 # Load necessary modules
+source /local/miniconda3/etc/profile.d/conda.sh
 conda activate aphid-nf
 
 # Variables
