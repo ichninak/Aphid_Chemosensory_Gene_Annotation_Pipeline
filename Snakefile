@@ -17,7 +17,7 @@ OUT_BASE = config.get("out_base", "./results")
 THREADS = config.get("threads", 50)
 THREADS2 = config.get("threads2", 20)
 
-# Flags d'exécution
+# Flags of execution
 RUN_OR = config.get("OR", False)
 RUN_GR = config.get("GR", False)
 
@@ -25,12 +25,12 @@ RUN_GR = config.get("GR", False)
 genome_files = glob.glob(f"{GENOME_DIR}/*.fa")
 genome_files.sort()
 
-# Création des identifiants GAGA (identique à Nextflow)
+# Creation of GAGA identifiers
 SAMPLES = {}
 for i, genome_path in enumerate(genome_files, 1):
     species = Path(genome_path).stem
-    id2 = f"{i:02d}"  # Format 01, 02, 03... comme Nextflow
-    gaga_id = f"GAGA-00{id2}"  # GAGA-0001, GAGA-0002... comme Nextflow
+    id2 = f"{i:02d}"  # Format 01, 02, 03...
+    gaga_id = f"GAGA-00{id2}"  # GAGA-0001, GAGA-0002...
     SAMPLES[gaga_id] = {
         "species": species,
         "genome": genome_path,
@@ -41,22 +41,24 @@ print(f"Discovered {len(SAMPLES)} genomes:")
 for gaga_id, info in SAMPLES.items():
     print(f"  {gaga_id}: {info['species']}")
 
-# Règles cibles
+# Target rules
 rule all:
     input:
-        # OR workflow results (si activé)
+        # OR workflow results (if enabled)
         expand("{out_base}/{sample}/OR_classification_complete.flag", 
                out_base=OUT_BASE, sample=SAMPLES.keys()) if RUN_OR else [],
-        # GR workflow results (si activé et OR existe)
+        # GR workflow results (if enabled and OR exists)
         expand("{out_base}/{sample}/GR_classification_complete.flag", 
                out_base=OUT_BASE, sample=SAMPLES.keys()) if RUN_GR else []
 
-# Règle OR annotation
+# Rule OR annotation
+
+# Rule OR annotation - FLAG SIMPLE
 rule or_annotation:
     input:
         genome = lambda wildcards: SAMPLES[wildcards.sample]["genome"]
     output:
-        flag = "{out_base}/{sample}/OR_classification_complete.flag",
+        flag = "{out_base}/{sample}/OR_classification_complete.flag",  # FLAG SIMPLE
         directory = directory("{out_base}/{sample}")
     params:
         gaga_id = lambda wildcards: wildcards.sample,
@@ -68,12 +70,9 @@ rule or_annotation:
     threads: THREADS
     resources:
         mem_mb=20000,
-        time_min=1440  # 24h
+        time_min=1440
     shell:
         """
-        # Create output directory
-        mkdir -p {output.directory}
-        
         # Run HAPpy ABCENTH for OR
         HAPpy --threads {threads} --annotator ABCENTH --hmm_dir {params.dbor} --genome {input.genome} --output_dir {output.directory}
         
@@ -100,17 +99,17 @@ rule or_annotation:
         # Classification
         perl {params.script_dir}/run_OR_classification.pl ABCENTH_clean.gff3 {params.gaga_id} {input.genome}
         
-        # Create completion flag
+        # FLAG SIMPLE : étape terminée 
         touch {output.flag}
         """
 
-# Règle GR1 annotation (ABCENTH)
+# Rules GR1 annotation (ABCENTH)
 rule gr1_annotation:
     input:
-        or_flag = "{out_base}/{sample}/OR_classification_complete.flag",
+        or_flag = "{out_base}/{sample}/OR_classification_complete.flag",  # Attend le flag OR
         genome = lambda wildcards: SAMPLES[wildcards.sample]["genome"]
     output:
-        flag = "{out_base}/{sample}/GR1_classification_complete.flag"
+        flag = "{out_base}/{sample}/GR1_classification_complete.flag"  # Crée un flag GR1
     params:
         gaga_id = lambda wildcards: f"10{SAMPLES[wildcards.sample]['id']}",
         species = lambda wildcards: SAMPLES[wildcards.sample]["species"],
@@ -142,10 +141,11 @@ rule gr1_annotation:
         # Classification
         perl {params.script_dir}/run_GR_classification_abcenth_GR_nonamefilter.pl ABCENTH_clean.gff3 {params.gaga_id} {input.genome}
         
+        # FLAG SIMPLE : GR1 terminé 
         touch {output.flag}
         """
 
-# Règle GR2 annotation (Genewise) - DÉPEND DE GR1
+# Rules GR2 annotation (Genewise) 
 rule gr2_annotation:
     input:
         gr1_flag = "{out_base}/{sample}/GR1_classification_complete.flag",  # Dépendance GR1 ajoutée
@@ -189,7 +189,7 @@ rule gr2_annotation:
         touch {output.flag}
         """
 
-# Règle GR3 annotation (Combined)
+# Rule GR3 annotation (Combined)
 rule gr3_annotation:
     input:
         gr1_flag = "{out_base}/{sample}/GR1_classification_complete.flag",
@@ -228,7 +228,7 @@ rule gr3_annotation:
         touch {output.flag}
         """
 
-# Règle finale pour GR (combine tous les résultats GR)
+# Rules finale pour GR (combine tous les résultats GR)
 rule gr_classification:
     input:
         gr1_flag = "{out_base}/{sample}/GR1_classification_complete.flag",
