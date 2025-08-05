@@ -1,0 +1,17 @@
+# Configuration Snakemake pour l'annotation des gènes chimiosensoriels
+
+# Chemins des données et outils
+genome_dir: "/projects/alterevo/00.GROR/genome_data"
+script_dir: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/scripts"
+db_chemo: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db_chemo"
+db2GR: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db2GR"
+dbOR: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/dbOR"
+out_base: "./results"
+
+# Paramètres de calcul
+threads: 50      # Nombre de threads pour les tâches intensives
+threads2: 20     # Nombre de threads pour les tâches moins intensives
+
+# Flags d'exécution (à définir en ligne de commande ou ici)
+OR: false   # Activer avec --config OR=true
+GR: false   # Activer avec --config GR=true

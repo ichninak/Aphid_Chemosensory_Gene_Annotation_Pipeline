@@ -1,0 +1,11 @@
+{
+    "python.defaultInterpreterPath": "/local/miniconda3/envs/aphid-nf/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.condaPath": "/local/miniconda3/bin/conda",
+    "snakemake.executable": "snakemake",
+    "files.associations": {
+        "Snakefile": "snakemake",
+        "*.smk": "snakemake"
+    },
+    "snakemake-lang.path": "/home/ichninak/miniconda3/envs/aphid-sm/bin/snakemake"
+}

@@ -1,0 +1,51 @@
+# Configuration SLURM pour les jobs Snakemake
+
+# Configuration par défaut
+__default__:
+  name: "aphid_{rule}"
+  cpus: 1
+  mem: "4G" 
+  time: "1:00:00"
+  output: "logs/{rule}_{wildcards}.out"
+  error: "logs/{rule}_{wildcards}.err"
+
+# Configuration spécifique par règle
+or_annotation:
+  name: "or_annot_{wildcards.sample}"
+  cpus: 50
+  mem: "20G"
+  time: "24:00:00"
+  output: "logs/or_annotation_{wildcards.sample}.out"
+  error: "logs/or_annotation_{wildcards.sample}.err"
+
+gr1_annotation:
+  name: "gr1_annot_{wildcards.sample}"
+  cpus: 50
+  mem: "20G"
+  time: "24:00:00"
+  output: "logs/gr1_annotation_{wildcards.sample}.out"
+  error: "logs/gr1_annotation_{wildcards.sample}.err"
+
+gr2_annotation:
+  name: "gr2_annot_{wildcards.sample}"
+  cpus: 20
+  mem: "10G"
+  time: "24:00:00"
+  output: "logs/gr2_annotation_{wildcards.sample}.out"
+  error: "logs/gr2_annotation_{wildcards.sample}.err"
+
+gr3_annotation:
+  name: "gr3_annot_{wildcards.sample}"
+  cpus: 1
+  mem: "4G"
+  time: "1:00:00"
+  output: "logs/gr3_annotation_{wildcards.sample}.out"
+  error: "logs/gr3_annotation_{wildcards.sample}.err"
+
+gr_classification:
+  name: "gr_final_{wildcards.sample}"
+  cpus: 1
+  mem: "2G"
+  time: "0:30:00"
+  output: "logs/gr_classification_{wildcards.sample}.out"
+  error: "logs/gr_classification_{wildcards.sample}.err"
