@@ -21,11 +21,15 @@ THREADS2 = config.get("threads2", 20)
 RUN_OR = config.get("OR", False)
 RUN_GR = config.get("GR", False)
 
+# Guard: GR requires OR
+if RUN_GR and not RUN_OR:
+    raise ValueError("Config error: GR=true requires OR=true because GR rules depend on OR outputs.")
+
 # Découverte automatique des génomes
 genome_files = glob.glob(f"{GENOME_DIR}/*.fa")
 genome_files.sort()
 
-# Creation of GAGA identifiers
+# Creation of GAGA identifiers (UN SEUL dictionnaire suffit !)
 SAMPLES = {}
 for i, genome_path in enumerate(genome_files, 1):
     species = Path(genome_path).stem
@@ -40,6 +44,16 @@ for i, genome_path in enumerate(genome_files, 1):
 print(f"Discovered {len(SAMPLES)} genomes:")
 for gaga_id, info in SAMPLES.items():
     print(f"  {gaga_id}: {info['species']}")
+
+# Helper functions to build family-specific IDs
+def gr1_id(sample):
+    return f"GAGA-10{SAMPLES[sample]['id']}"
+
+def gr2_id(sample):
+    return f"GAGA-20{SAMPLES[sample]['id']}"
+
+def gr3_id(sample):
+    return f"GAGA-30{SAMPLES[sample]['id']}"
 
 # Target rules
 rule all:
@@ -73,6 +87,7 @@ rule or_annotation:
         time_min=1440
     shell:
         """
+        set -euo pipefail
         # Run HAPpy ABCENTH for OR
         HAPpy --threads {threads} --annotator ABCENTH --hmm_dir {params.dbor} --genome {input.genome} --output_dir {output.directory}
         
@@ -109,27 +124,28 @@ rule gr1_annotation:
         or_flag = "{out_base}/{sample}/OR_classification_complete.flag",  # Attend le flag OR
         genome = lambda wildcards: SAMPLES[wildcards.sample]["genome"]
     output:
-        flag = "{out_base}/{sample}/GR1_classification_complete.flag"  # Crée un flag GR1
+        flag = "{out_base}/{sample}/GR1_classification_complete.flag",
+        directory = lambda wildcards: directory(f"{OUT_BASE}/{gr1_id(wildcards.sample)}")
     params:
-        gaga_id = lambda wildcards: f"10{SAMPLES[wildcards.sample]['id']}",
+        gaga_id = lambda wildcards: gr1_id(wildcards.sample),
         species = lambda wildcards: SAMPLES[wildcards.sample]["species"],
         db2gr = DB2GR,
         script_dir = SCRIPT_DIR,
         out_base = OUT_BASE,
-        sample = lambda wildcards: wildcards.sample
+        sample = lambda wildcards: wildcards.sample,
+        gr1_dir = lambda wildcards: f"{OUT_BASE}/{gr1_id(wildcards.sample)}"
     threads: THREADS
     resources:
         mem_mb=20000,
         time_min=1440
     shell:
         """
-        cd {params.out_base}/{params.sample}
+        set -euo pipefail
+        # Run HAPpy ABCENTH for GR1 (family-specific directory {params.gr1_dir})
+        HAPpy --threads {threads} --annotator ABCENTH --hmm_dir {params.db2gr} --genome {input.genome} --output_dir {params.gr1_dir}
         
-        # Run HAPpy ABCENTH for GR
-        HAPpy --threads {threads} --annotator ABCENTH --hmm_dir {params.db2gr} --genome {input.genome} --output_dir GR1_ABCENTH
-        
-        cd GR1_ABCENTH
-        
+        cd {params.gr1_dir}
+
         # Generation of GFF3 and protein files
         gt gtf_to_gff3 -o ABCENTH.gff3 ABCENTH.gtf
         gt gff3 -sort -tidy -retainids -o ABCENTH_clean.gff3 ABCENTH.gff3
@@ -141,8 +157,8 @@ rule gr1_annotation:
         # Classification
         perl {params.script_dir}/run_GR_classification_abcenth_GR_nonamefilter.pl ABCENTH_clean.gff3 {params.gaga_id} {input.genome}
         
-        # FLAG SIMPLE : GR1 terminé 
-        touch {output.flag}
+        # FLAG SIMPLE : GR1 terminé ✅
+        touch {params.out_base}/{params.sample}/GR1_classification_complete.flag
         """
 
 # Rules GR2 annotation (Genewise) 
@@ -151,26 +167,27 @@ rule gr2_annotation:
         gr1_flag = "{out_base}/{sample}/GR1_classification_complete.flag",  # Dépendance GR1 ajoutée
         genome = lambda wildcards: SAMPLES[wildcards.sample]["genome"]
     output:
-        flag = "{out_base}/{sample}/GR2_classification_complete.flag"
+        flag = "{out_base}/{sample}/GR2_classification_complete.flag",
+        directory = lambda wildcards: directory(f"{OUT_BASE}/{gr2_id(wildcards.sample)}")
     params:
-        gaga_id = lambda wildcards: f"20{SAMPLES[wildcards.sample]['id']}",
+        gaga_id = lambda wildcards: gr2_id(wildcards.sample),
         species = lambda wildcards: SAMPLES[wildcards.sample]["species"],
         db2gr = DB2GR,
         script_dir = SCRIPT_DIR,
         out_base = OUT_BASE,
-        sample = lambda wildcards: wildcards.sample
+        sample = lambda wildcards: wildcards.sample,
+        gr2_dir = lambda wildcards: f"{OUT_BASE}/{gr2_id(wildcards.sample)}"
     threads: THREADS2
     resources:
         mem_mb=10000,
         time_min=1440
     shell:
         """
-        cd {params.out_base}/{params.sample}
+        set -euo pipefail
+        # Run HAPpy Genewise for GR2 (family-specific directory {params.gr2_dir})
+        HAPpy --threads {threads} --annotator Genewise --hmm_dir {params.db2gr} --genome {input.genome} --output_dir {params.gr2_dir}
         
-        # Run HAPpy Genewise for GR
-        HAPpy --threads {threads} --annotator Genewise --hmm_dir {params.db2gr} --genome {input.genome} --output_dir GR2_Genewise
-        
-        cd GR2_Genewise
+        cd {params.gr2_dir}
         
         # Process Genewise results
         perl {params.script_dir}/get_genewise_gtf_corrected_extrafilterfirstexon.pl Genewise.out {input.genome} > Genewise_corrected.gtf
@@ -186,43 +203,42 @@ rule gr2_annotation:
         # Classification
         perl {params.script_dir}/run_GR_classification_happy_GR.pl Genewise_corrected_clean_cds_to_exon.gff3 {params.gaga_id} {input.genome}
         
-        touch {output.flag}
+        # FLAG SIMPLE : GR2 terminé ✅
+        touch {params.out_base}/{params.sample}/GR2_classification_complete.flag
         """
 
 # Rule GR3 annotation (Combined)
 rule gr3_annotation:
-    input:
-        gr1_flag = "{out_base}/{sample}/GR1_classification_complete.flag",
-        gr2_flag = "{out_base}/{sample}/GR2_classification_complete.flag",
-        genome = lambda wildcards: SAMPLES[wildcards.sample]["genome"]
     output:
-        flag = "{out_base}/{sample}/GR3_classification_complete.flag"
+        flag = "{out_base}/{sample}/GR3_classification_complete.flag",
+        directory = lambda wildcards: directory(f"{OUT_BASE}/{gr3_id(wildcards.sample)}")
     params:
-        gaga_id = lambda wildcards: f"30{SAMPLES[wildcards.sample]['id']}",
+        gaga_id = lambda wildcards: gr3_id(wildcards.sample),
         species = lambda wildcards: SAMPLES[wildcards.sample]["species"],
         script_dir = SCRIPT_DIR,
         out_base = OUT_BASE,
-        sample = lambda wildcards: wildcards.sample
+        sample = lambda wildcards: wildcards.sample,
+        gr1_dir = lambda wildcards: f"{OUT_BASE}/{gr1_id(wildcards.sample)}",
+        gr2_dir = lambda wildcards: f"{OUT_BASE}/{gr2_id(wildcards.sample)}",
+        gr3_dir = lambda wildcards: f"{OUT_BASE}/{gr3_id(wildcards.sample)}"
     threads: 1
     resources:
         mem_mb=4000,
         time_min=60
     shell:
         """
-        cd {params.out_base}/{params.sample}
+        set -euo pipefail
+        mkdir -p {params.gr3_dir}
+        cd {params.gr3_dir}
         
-        # Create combined directory
-        mkdir -p GR3_Combined
-        cd GR3_Combined
-        
-        # Combine GR1 and GR2 results
-        perl {params.script_dir}/get_combined_nr_gff.pl ../GR1_ABCENTH/ABCENTH_clean.gff3 ../GR2_Genewise/Genewise_corrected_clean_cds_to_exon.gff3 > Combined_nr.gff3
+        # Combine GR1 and GR2 results (absolute paths)
+        perl {params.script_dir}/get_combined_nr_gff.pl {params.gr1_dir}/ABCENTH_clean.gff3 {params.gr2_dir}/Genewise_corrected_clean_cds_to_exon.gff3 > Combined_nr.gff3
         
         perl {params.script_dir}/gff2fasta_v3.pl {input.genome} Combined_nr.gff3 Combined_nr
         sed 's/X*$//' Combined_nr.pep.fasta > Combined_nr.pep.fasta.tmp
         mv Combined_nr.pep.fasta.tmp Combined_nr.pep.fasta
         
-        # Get conserved GRs
+        # Get conserved GRs (family ID {params.gaga_id})
         perl {params.script_dir}/get_conserved_GRs.pl Combined_nr.gff3 {params.gaga_id} {input.genome}
         
         touch {output.flag}
@@ -238,5 +254,6 @@ rule gr_classification:
         flag = "{out_base}/{sample}/GR_classification_complete.flag"
     shell:
         """
+        set -euo pipefail
         touch {output.flag}
         """
