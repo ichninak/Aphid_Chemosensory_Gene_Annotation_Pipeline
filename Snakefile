@@ -11,8 +11,9 @@ configfile: "config.yaml"
 GENOME_DIR = config.get("genome_dir", "/projects/alterevo/00.GROR/genome_data")
 SCRIPT_DIR = config.get("script_dir", "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/scripts")
 DB_CHEMO = config.get("db_chemo", "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db_chemo")
+DBGR = config.get("dbGR", "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/dbGR")
 DB2GR = config.get("db2GR", "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db2GR")
-DBOR = config.get("dbOR", "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/dbOR")
+DB2OR = config.get("db2OR", "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db2OR")
 OUT_BASE = config.get("out_base", "./results")
 THREADS = config.get("threads", 50)
 THREADS2 = config.get("threads2", 20)
@@ -77,7 +78,7 @@ rule or_annotation:
     params:
         gaga_id = lambda wildcards: wildcards.sample,
         species = lambda wildcards: SAMPLES[wildcards.sample]["species"],
-        dbor = DBOR,
+        db2or = DB2OR,
         script_dir = SCRIPT_DIR,
         db_chemo = DB_CHEMO,
         out_base = OUT_BASE
@@ -130,6 +131,7 @@ rule gr1_annotation:
         gaga_id = lambda wildcards: gr1_id(wildcards.sample),
         species = lambda wildcards: SAMPLES[wildcards.sample]["species"],
         db2gr = DB2GR,
+        dbgr = DBGR,
         script_dir = SCRIPT_DIR,
         out_base = OUT_BASE,
         sample = lambda wildcards: wildcards.sample,
@@ -173,6 +175,7 @@ rule gr2_annotation:
         gaga_id = lambda wildcards: gr2_id(wildcards.sample),
         species = lambda wildcards: SAMPLES[wildcards.sample]["species"],
         db2gr = DB2GR,
+        dbgr = DBGR,
         script_dir = SCRIPT_DIR,
         out_base = OUT_BASE,
         sample = lambda wildcards: wildcards.sample,
@@ -185,7 +188,7 @@ rule gr2_annotation:
         """
         set -euo pipefail
         # Run HAPpy Genewise for GR2 (family-specific directory {params.gr2_dir})
-        HAPpy --threads {threads} --annotator Genewise --hmm_dir {params.db2gr} --genome {input.genome} --output_dir {params.gr2_dir}
+        HAPpy --threads {threads} --annotator Genewise --hmm_dir {params.dbgr} --genome {input.genome} --output_dir {params.gr2_dir}
         
         cd {params.gr2_dir}
         

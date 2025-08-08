@@ -4,8 +4,9 @@
 genome_dir: "/projects/alterevo/00.GROR/genome_data"
 script_dir: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/scripts"
 db_chemo: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db_chemo"
+dbGR: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/dbGR"
 db2GR: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db2GR"
-dbOR: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/dbOR"
+db2OR: "/home/genouest/inra_umr1349/ichninak/01-GAGA/04_Gene_re-annotation/01-Chemosensory_gene_families/db2OR"
 out_base: "./results"
 
 # Paramètres de calcul
