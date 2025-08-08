@@ -25,6 +25,8 @@ conda create -n aphid-nf -c bioconda -c etetoolkit python=3 numpy ete3 wise2 maf
 conda activate aphids-nf
 ```
 
+`mamba env create --name snakemake-tutorial --file environment.yaml`
+
 Installation of Main dependencies:
 ```bash
 conda install -c bioconda -c conda-forge openjdk nextflow genometools-genometools blast interproscan gemoma=1.7.1
